@@ -1,8 +1,10 @@
+import * as React from 'react';
+import DesktopButtons from "./DesktopButtons.jsx";
+import BurguerMenu from "./BurguerMenu.jsx";
+import Search from "./Search.jsx";
+import PrivateUser from "./PrivateUser.jsx";
 import { AppBar, Box, Toolbar, Container } from "@mui/material";
-import DesktopButtons from "./DestopButtons";
-import BurguerMenu from "./BurguerMenu";
-import Search from "./Search";
-import PrivateUser from "./PrivateUser";
+
 
 export const Navbar = () => {
     return (
@@ -49,9 +51,7 @@ export const Navbar = () => {
                         <Search />
                         <DesktopButtons />
                         <PrivateUser />
-                        
                     </Box>
-                    
                     <Box
                         sx={{
                             flexGrow: 3,

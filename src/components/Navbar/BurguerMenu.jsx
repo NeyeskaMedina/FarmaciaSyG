@@ -1,5 +1,4 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import {
     Box,
     Drawer,
@@ -8,9 +7,11 @@ import {
     ListItem,
     ListItemButton,
 } from "@mui/material";
-import PrivateUser from "./PrivateUser";
+import { NavLink } from "react-router-dom";
+import PrivateUser from "./PrivateUser.jsx";
 import MenuIcon from "@mui/icons-material/Menu";
-import { buttonStyles } from "../Navbar/EstiloHoverdeBoton";
+import { buttonStyles } from "./StyleHoverButtons.jsx";
+
 
 
 const buttonStyles1 = {

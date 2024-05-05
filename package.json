@@ -3,6 +3,9 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "author": {
+    "name": "Neyeska Goidas"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -12,32 +15,31 @@
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
-    "@mui/icons-material": "^5.15.16",
-    "@mui/lab": "^5.0.0-alpha.170",
-    "@mui/material": "^5.15.16",
+    "@mui/icons-material": "^5.15.14",
+    "@mui/material": "^5.15.14",
     "@mui/styled-engine-sc": "^6.0.0-alpha.18",
-    "@mui/x-date-pickers": "^7.3.2",
-    "axios": "^1.6.8",
-    "dayjs": "^1.11.11",
+    "@mui/x-date-pickers": "^7.1.1",
+    "axios": "^1.6.7",
+    "dayjs": "^1.11.10",
     "gravatar": "^1.8.2",
     "leaflet": "^1.9.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^5.2.0",
-    "react-router-dom": "^6.23.0",
+    "react-icons": "^5.0.1",
+    "react-router-dom": "^6.22.3",
     "react-toastify": "^10.0.5",
     "standardjs": "^1.0.0-alpha",
-    "styled-components": "^6.1.9",
+    "styled-components": "^6.1.8",
     "sweetalert": "^2.1.2"
   },
   "devDependencies": {
-    "@types/react": "^18.2.66",
-    "@types/react-dom": "^18.2.22",
+    "@types/react": "^18.2.64",
+    "@types/react-dom": "^18.2.21",
     "@vitejs/plugin-react": "^4.2.1",
     "eslint": "^8.57.0",
-    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react": "^7.34.0",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.6",
-    "vite": "^5.2.0"
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "vite": "^5.1.6"
   }
 }

@@ -1,12 +1,12 @@
-import { RxAvatar } from 'react-icons/rx';
 import {
     Box,
     Typography,
     Button,
 } from '@mui/material';
-
+import { RxAvatar } from 'react-icons/rx';
 import { NavLink } from 'react-router-dom';
 import { buttonStyles } from './StyleHoverButtons';
+
 
 const PrivateUser = () => {
     return (

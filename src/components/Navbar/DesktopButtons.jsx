@@ -1,6 +1,7 @@
-import { NavLink } from 'react-router-dom';
 import { Box, Button } from '@mui/material';
-import { buttonStyles } from './StyleHoverButtons';
+import { NavLink } from 'react-router-dom';
+import { buttonStyles } from './StyleHoverButtons.jsx';
+
 
 
 const buttonStyles1 = {
