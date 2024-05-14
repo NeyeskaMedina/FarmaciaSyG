@@ -23,7 +23,7 @@ const DesktopButtons = () => {
             </Button>
             <Button
                 component={NavLink}
-                to="/farmacia_de_turno"
+                to="/farmacia-de-turno"
                 sx={{ ...buttonStyles1, ...buttonStyles }}
             >
                 Farmacia de turno

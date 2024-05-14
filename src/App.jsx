@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from "./components/Navbar/Navbar.jsx";
 import Home from "./view/Home/Home.jsx";
 import NotFound from "./view/NotFound/NotFound.jsx";
+import PharmacyTurn from "./view/PharmacyTurn/PharmacyTurn.jsx";
 
 //Context
 // import { useAuth } from './context/AuthContext';
@@ -21,12 +22,12 @@ function App() {
           <Routes>
 
             <Route path="/" element={<Home />} />
+            <Route path="/Farmacia-de-turno" element={<PharmacyTurn />} />
             {/* <Route path="/sobre-nosotros" element={<AboutUs />} />
             <Route path="/login" element={<Login />} /> */}
             {/* <Route path="/register" element={<Register />} />
             <Route path="/category/:id/:name" element={<Category />} />
             <Route path="/resultados/:name" element={<SearchResult />} />
-            <Route path="/user-profile" element={<RegularUserProfile />} />
             <Route path="/admin" element={<AdminUserProfile />} />
             <Route path="/seller" element={<SellerUserProfile />} />
             <Route path="/shopping-cart" element={<ShoppingCart />} />
