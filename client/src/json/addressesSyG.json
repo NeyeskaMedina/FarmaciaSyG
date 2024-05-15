@@ -1,0 +1,20 @@
+[ 
+    {
+        "id": 1,
+        "nombre": "Av. Grecia 2510, 1392007 Calama, Antofagasta",
+        "latitud": "-22.455518283538883",
+        "longitud": "-68.93380965582219"
+    }, 
+    {
+        "id": 2,
+        "nombre": "Av. Arturo Prat 1597-B, Calama ",
+        "latitud": "-22.446077367491835",
+        "longitud": "-68.91892232726333"
+    }, 
+    {
+        "id": 3,
+        "nombre": "Av. Granaderos 2205, Local 2, Calama",
+        "latitud": "-22.457536540720714",
+        "longitud": "-68.92992236742114"
+    }
+]

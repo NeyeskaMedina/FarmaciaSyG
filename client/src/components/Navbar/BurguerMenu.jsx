@@ -89,7 +89,7 @@ export default function BurguerMenu() {
                         
                         <ListItemButton
                             component={NavLink}
-                            to="/farmacia_de_turno"
+                            to="/farmacia-de-turno"
                             sx={{ ...buttonStyles1, ...buttonStyles }}
                         >
                             Farmacia de Turno

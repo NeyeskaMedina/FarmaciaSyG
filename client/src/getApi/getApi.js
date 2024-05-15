@@ -1,6 +1,7 @@
 import axios from "axios";
-const accessToken = import.meta.env.TOKEN_API;
-console.log(accessToken);
+// const accessToken = import.meta.env.TOKEN_API;
+const accessToken = '61e76d6132cc379f2e1dcc3924f2ee55d43aae68'
+// console.log(accessToken);
 
 async function getAllDocuments(){
     
@@ -18,24 +19,26 @@ async function getAllDocuments(){
         }
         // Obtener el número total de documentos y calcular el número total de páginas
         const totalDocuments = response.data.count;
-        console.log(totalDocuments);
+        // console.log(totalDocuments);
         totalPages = Math.ceil(totalDocuments / pageSize);
-        console.log(totalPages)
+        // console.log(totalPages)
 
         // Agregar los documentos de la primera página a la lista total
         allDocuments = [...allDocuments, ...response.data.items];
 
-        for (let page = 2; page <= totalPages; page++) {
-            const nextPageResponse = await axios.get(`https://api.bsale.io/v1/documents.json?limit=${pageSize}&page=${page}`, {
-                headers: {
-                    'access_token': accessToken, 
-                    'Content-Type': 'application/json'
-                }
-            });
-            // Agregar los documentos de la página actual a la lista total
-            allDocuments = [...allDocuments, ...nextPageResponse.data.items];
-        }
-        return allDocuments;
+        // for (let page = 2; page <= totalPages; page++) {
+        //     const nextPageResponse = await axios.get(`https://api.bsale.io/v1/documents.json?limit=${pageSize}&page=${page}`, {
+        //         headers: {
+        //             'access_token': accessToken, 
+        //             'Content-Type': 'application/json'
+        //         }
+        //     });
+        //     // Agregar los documentos de la página actual a la lista total
+        //     allDocuments = [...allDocuments, ...nextPageResponse.data.items];
+        // }
+        // return allDocuments
+        console.log(allDocuments);;
+        return allDocuments
     } catch (err) {
         console.error(err);
         return null;
