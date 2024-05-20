@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar/Navbar.jsx";
 import Home from "./view/Home/Home.jsx";
 import NotFound from "./view/NotFound/NotFound.jsx";
 import PharmacyTurn from "./view/PharmacyTurn/PharmacyTurn.jsx";
-
+import Footer from "./components/Footer/Footer.jsx";
 //Context
 // import { useAuth } from './context/AuthContext';
 
@@ -48,8 +48,8 @@ function App() {
 
           </Routes>
         </main>
-        <footer>
-          {/* <Footer /> */}
+        <footer style={{width: '-moz-available'}}>
+                <Footer />
         </footer>
       </div>
     );

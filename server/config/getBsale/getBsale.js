@@ -10,7 +10,7 @@ import {
 const accessToken = "61e76d6132cc379f2e1dcc3924f2ee55d43aae68"; 
 
 // Función para obtener todos los productos de la API de Bsale
-async function getAllProducts() {
+const getAllProducts = async () =>  {
     const pageSize = 50; // Cantidad de productos por pagina
     let totalPages = 1; // Numeto total de paginas
     let allProducts = []; //Array que guardará todos los productos
@@ -160,3 +160,7 @@ async function getAllProducts() {
         console.error(`Error en consulta ApiREST para obtener data`, error)
     }
 })();
+
+export {
+    getAllProducts
+}

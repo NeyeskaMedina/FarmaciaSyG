@@ -1,24 +1,23 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Carrusel from "../../components/Carrusel/Carrusel.jsx";
 import { Box } from '@mui/material';
-import { getDetails } from "../../getApi/getApi.js";
+// import { getDetails } from "../../getApi/getApi.js";
 import "./style.css";
 import AboutUs from "../../components/AboutUs/AboutUs.jsx";
-import Footer from "../../components/Footer/Footer.jsx";
 
 export const Home = () => {
-    useEffect(() =>{
-        async function axiosData(){
-            try {
-                const allDetails = await getDetails();
-                console.log(allDetails)
-                return allDetails;
-            } catch (err) {
-                console.error(err)
-            }
-        };  
-        axiosData();
-    }, []);
+    // useEffect(() =>{
+    //     async function axiosData(){
+    //         try {
+    //             const allDetails = await getDetails();
+    //             console.log(allDetails)
+    //             return allDetails;
+    //         } catch (err) {
+    //             console.error(err)
+    //         }
+    //     };  
+    //     axiosData();
+    // }, []);
     return (
         <div className="home" >
             <section className="home_carrusel">
@@ -40,9 +39,6 @@ export const Home = () => {
             <section className='AboutUs'>
                 <AboutUs />
             </section>
-            <footer style={{width: '-moz-available'}}>
-                <Footer />
-            </footer>
         </div>
     )
 }

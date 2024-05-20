@@ -81,7 +81,7 @@ const SocialMediaLinks = () => {
                                 mostrarUbicacion(direccion);
                             }}
                             underline="none"
-                            sx={{ ...linkStyles, fontSize: '0.8rem', color: 'var(--font-footer-color1)' }}
+                            sx={{ ...linkStyles, fontSize: '0.5rem', color: 'var(--font-footer-color1)' }}
                         >
                             {`Dirección # ${direccionIndex}`}
                         </Link>
