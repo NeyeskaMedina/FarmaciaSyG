@@ -1,0 +1,18 @@
+.selectBuscador {
+    display: flex;
+    height: 6vh;
+    justify-content: center;
+}
+
+.form-select {
+    font-size: 1.1em;
+    border: "0";
+    border-radius: 10px 10px 10px 10px;
+    text-align: center;
+    background-color: white;
+    border: solid 1.5px var(--background-btn2);
+}
+.form-select:hover{
+    background-color: var(--background-btn2);
+    color: white;
+}

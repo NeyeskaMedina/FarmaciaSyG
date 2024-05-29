@@ -1,24 +1,22 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Carrusel from "../../components/Carrusel/Carrusel.jsx";
 import { Box } from '@mui/material';
-import { getDetails } from "../../getApi/getApi.js";
 import "./style.css";
 import AboutUs from "../../components/AboutUs/AboutUs.jsx";
-import Footer from "../../components/Footer/Footer.jsx";
 
 export const Home = () => {
-    useEffect(() =>{
-        async function axiosData(){
-            try {
-                const allDetails = await getDetails();
-                console.log(allDetails)
-                return allDetails;
-            } catch (err) {
-                console.error(err)
-            }
-        };  
-        axiosData();
-    }, []);
+    // useEffect(() =>{
+    //     const updateDataBase = async () => {
+    //             console.log("Se Actualiza la base de datos desde el servidor")
+    //         try {
+    //             await updateDB();
+    //             console.log('¡Base de datos actualizada!')
+    //         } catch (err) {
+    //             console.error(err)
+    //         }   
+    //     }    
+    //     updateDataBase();
+    // }, []);
     return (
         <div className="home" >
             <section className="home_carrusel">
@@ -40,9 +38,6 @@ export const Home = () => {
             <section className='AboutUs'>
                 <AboutUs />
             </section>
-            <footer style={{width: '-moz-available'}}>
-                <Footer />
-            </footer>
         </div>
     )
 }
