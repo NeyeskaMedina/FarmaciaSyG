@@ -4,6 +4,7 @@ import Home from "./view/Home/Home.jsx";
 import NotFound from "./view/NotFound/NotFound.jsx";
 import PharmacyTurn from "./view/PharmacyTurn/PharmacyTurn.jsx";
 import Footer from "./components/Footer/Footer.jsx";
+import SearchResult from "./view/Search/SearchResult.jsx";
 //Context
 // import { useAuth } from './context/AuthContext';
 
@@ -23,8 +24,8 @@ function App() {
 
             <Route path="/" element={<Home />} />
             <Route path="/Farmacia-de-turno" element={<PharmacyTurn />} />
-            {/* <Route path="/sobre-nosotros" element={<AboutUs />} />
-            <Route path="/login" element={<Login />} /> */}
+            <Route path="/buscar-medicamento/:name" element={<SearchResult />} />
+            {/* <Route path="/login" element={<Login />} />  */}
             {/* <Route path="/register" element={<Register />} />
             <Route path="/category/:id/:name" element={<Category />} />
             <Route path="/resultados/:name" element={<SearchResult />} />

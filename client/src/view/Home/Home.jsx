@@ -1,22 +1,21 @@
 import React from 'react'
 import Carrusel from "../../components/Carrusel/Carrusel.jsx";
 import { Box } from '@mui/material';
-// import { getDetails } from "../../getApi/getApi.js";
 import "./style.css";
 import AboutUs from "../../components/AboutUs/AboutUs.jsx";
 
 export const Home = () => {
     // useEffect(() =>{
-    //     async function axiosData(){
+    //     const updateDataBase = async () => {
+    //             console.log("Se Actualiza la base de datos desde el servidor")
     //         try {
-    //             const allDetails = await getDetails();
-    //             console.log(allDetails)
-    //             return allDetails;
+    //             await updateDB();
+    //             console.log('¡Base de datos actualizada!')
     //         } catch (err) {
     //             console.error(err)
-    //         }
-    //     };  
-    //     axiosData();
+    //         }   
+    //     }    
+    //     updateDataBase();
     // }, []);
     return (
         <div className="home" >

@@ -36,8 +36,8 @@ export const ApiConsult = ({ data, setData, setOriginalData, setChangeSelect, ch
       const local = data[0]
       const mapUrl=`https://maps.google.com/maps?q=${local.local_lat},${local.local_lng}&z=15&output=embed`
       return (
-        <Box sx={{ ...bgImage, width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', marginBottom: '5vh' }}>
-          <p style={{ width:'70%', display:'flex', border: 'solid 1px var(--font-btn4-color)', borderRadius: '10px 10px 10px 10px' }}>{local.local_nombre} - {local.local_direccion}</p>
+        <Box sx={{ ...bgImage, width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '5vh' }}>
+        <p style={{ width:'45%',fontWeight:'500', height: '6vh', display: 'flex',padding: '5px',alignItems: 'center',justifyContent: 'center', color:'white', backgroundColor: 'green', borderRadius: '10px 10px 10px 10px' }}>{local.local_nombre} - {local.local_direccion}</p>
         <iframe 
             title={local.local_nombre}
             src={mapUrl} 

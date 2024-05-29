@@ -1,20 +1,20 @@
 import { Box, IconButton, OutlinedInput, InputAdornment, FormControl, InputLabel } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState } from 'react';
 
 
 export default function Search() {
     const [searchValue, setSearchValue] = useState('');
-    // // const navigate = useNavigate();
+    const navigate = useNavigate();
 
 
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
-    //     console.log("Valor ingresado:", searchValue);
-    //     // navigate(`/resultados/${searchValue}`, { state: Math.random()*10000000 });
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log("Valor ingresado:", searchValue);
+        navigate(`/buscar-medicamento/${searchValue}`, { state: Math.random()*10000000 });
 
-    // }
+    }
 
     const handleChange = (e) => {
         setSearchValue(e.target.value);
@@ -22,8 +22,7 @@ export default function Search() {
 
     return (
         <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', width: '24%' }}>
-            <form >
-            {/* onSubmit={handleSubmit} */}
+            <form  onSubmit={handleSubmit}>
                 <FormControl
                     sx={{
                         m: 1,
