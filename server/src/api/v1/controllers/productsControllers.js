@@ -5,21 +5,25 @@ import { handleError } from "../utils/utils.js";
 
 //Agrego y actualizo los productos de la base de datos
 const addProducts = async (req, res) => {
-    const { products } = req.body;
+    const { items } = req.body;
+    if (!Array.isArray(items) || items.length === 0) {
+        return res.status(400).json({ error: 'El cuerpo de la solicitud debe contener una lista de productos en "items".' });
+    }
+    console.log(req.body);
     try {
-        let response = "";
+        let id = "";
+        let name = "";
+        let product_type = "";
         // Espera a que se resuelvan todas las consultas de inserción en paralelo
-        await Promise.all(products.map(product => {
-            const prop = {
-                id: product.id,
-                name: product.name,
-                product_type: product.product_type_name
-            }
-            console.log(prop);
-            const {id, name, product_type} = prop;
-            response = insertProductsDB(id, name, product_type);
-            return res.status(201).json({ product: response });
+        const response = await Promise.all(items.map(async (item) => {
+            
+                id = item.id;
+                name = item.name;
+                product_type = item.product_type_name
+        
+            return await insertProductsDB(id, name, product_type);
         }));
+        res.status(201).json({ products: response });
     } catch (error) {
         const errorFound = handleError(error.code) || [{ status: 500, message: 'Error interno del servidor' }];
         return res.status(errorFound[0]?.status).json({ error: errorFound[0]?.message });

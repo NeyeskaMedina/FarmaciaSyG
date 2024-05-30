@@ -8,4 +8,6 @@ const router = express.Router();
 
 router.post("/products", addProducts)
 
+export default router;
+
 // getActivity, getProducts 'Activar funcionalidad'
