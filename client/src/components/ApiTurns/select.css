@@ -12,7 +12,7 @@
     background-color: white;
     border: solid 1.5px var(--background-btn2);
 }
-.form-select:hover{
+.hover-select:hover{
     background-color: var(--background-btn2);
     color: white;
 }
