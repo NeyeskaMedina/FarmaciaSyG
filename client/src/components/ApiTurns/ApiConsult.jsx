@@ -58,7 +58,7 @@ export const ApiConsult = ({ data, setData, setOriginalData, setChangeSelect, ch
             width="90%" 
             height="450px" 
             style={{border:"0", bordeRadius:'20px 20px 20px 20px'}} 
-            allowfullscreen="" 
+            allowFullScreen="" 
             loading="lazy" 
             referrerpolicy="no-referrer-when-downgrade">
         </iframe>

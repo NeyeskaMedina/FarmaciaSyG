@@ -3,6 +3,7 @@ import Carrusel from "../../components/Carrusel/Carrusel.jsx";
 import { Box } from '@mui/material';
 import "./style.css";
 import AboutUs from "../../components/AboutUs/AboutUs.jsx";
+import Facebook from "../../components/Facebook/Facebook.jsx";
 
 export const Home = () => {
     // useEffect(() =>{
@@ -34,6 +35,9 @@ export const Home = () => {
                     ))} */}
                     <h1>productos</h1>
                 </Box>
+            </section>
+            <section>
+                <Facebook />
             </section>
             <section className='AboutUs'>
                 <AboutUs />
