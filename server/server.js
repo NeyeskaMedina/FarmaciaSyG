@@ -3,7 +3,7 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import 'dotenv/config'
 
-import productRoutes from "./config/routes/productRoutes.js";
+import loginRoutes from "./config/routes/loginRoutes.js";
 
 const app = express();
 const PORT = process.env.PORT_DB || 4000;
@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ limit: '500mb', extended: true }))
 
 
 
-app.use("/api/v1", productRoutes);
+app.use("/api/v1", loginRoutes);
 
 
 app.listen(PORT, console.log(`¡Servidor encendido en el puerto! ${PORT}`));
