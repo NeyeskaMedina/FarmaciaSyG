@@ -1,6 +1,5 @@
 import axios from "axios";
 const accessToken = import.meta.env.VITE_TOKEN_BSALE;
-    console.log(accessToken);
 // NECESITO
 // productName : {
 //      idVariant: "",

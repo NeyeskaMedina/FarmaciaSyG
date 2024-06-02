@@ -1,8 +1,8 @@
 import React from 'react'
 
-export const Private = () => {
+export const Extranet = () => {
   return (
     <div>Private</div>
   )
 }
-export default Private;
+export default Extranet;

@@ -4,13 +4,16 @@ import App from './App.jsx'
 import './index.css'
 import { ContextProvider } from "./context/ContextProvider.jsx";
 import { FacebookProvider } from "react-facebook";
+import { AuthProvider } from "./context/useAuth.jsx";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
       <ContextProvider>
-        <FacebookProvider>
-          <App />
-        </FacebookProvider>
+        <AuthProvider>
+          <FacebookProvider>
+            <App />
+          </FacebookProvider>
+        </AuthProvider>
       </ContextProvider>
   </React.StrictMode>,
 )

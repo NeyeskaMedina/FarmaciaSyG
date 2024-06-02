@@ -2,7 +2,7 @@ import * as React from 'react';
 import DesktopButtons from "./DesktopButtons.jsx";
 import BurguerMenu from "./BurguerMenu.jsx";
 import Search from "./Search.jsx";
-import PrivateUser from "./PrivateUser.jsx";
+// import PrivateUser from "./PrivateUser.jsx";
 import { AppBar, Box, Toolbar, Container } from "@mui/material";
 
 
@@ -50,7 +50,7 @@ export const Navbar = () => {
                         </Box>
                         <Search />
                         <DesktopButtons />
-                        <PrivateUser />
+                        {/* <PrivateUser /> */}
                     </Box>
                     <Box
                         sx={{
@@ -68,7 +68,7 @@ export const Navbar = () => {
                         </Box>
                         <Search/>
                         <DesktopButtons />
-                        <PrivateUser />
+                        {/* <PrivateUser /> */}
                     </Box>
                 </Toolbar>
             </Container>
