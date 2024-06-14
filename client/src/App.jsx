@@ -7,7 +7,6 @@ import Footer from "./components/Footer/Footer.jsx";
 import SearchResult from "./view/Search/SearchResult.jsx";
 import Login from "../src/view/Login/Login.jsx";
 import Extranet from "./view/Private/Extranet.jsx";
-//Context
 import { useAuth } from './context/useAuth.jsx';
 
 
@@ -23,12 +22,11 @@ function App() {
         </header>
         <main>
           <Routes>
-
             <Route path="/" element={<Home />} />
             <Route path="/Farmacia-de-turno" element={<PharmacyTurn />} />
             <Route path="/buscar-medicamento/:name" element={<SearchResult />} />
             <Route path="/login-extranet/grecia" element={<Login />} /> 
-            <Route path="/extranet/" element={user ? <Extranet /> : <NotFound />} />
+            <Route path="/extranet/" element={user ? <Extranet /> : <Extranet />} />
             {/* <Route path="/register" element={<Register />} />
             <Route path="/category/:id/:name" element={<Category />} />
             <Route path="/resultados/:name" element={<SearchResult />} />

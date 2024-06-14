@@ -1,14 +1,23 @@
 import  { useState, useEffect } from 'react';
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Grid } from "@mui/material";
 import ButtonLittle from '../Buttons/ButtonLittle/ButtonLittle.jsx';
 import addressesSyG from '../../json/addressesSyG.json';
 
+const displayMaps = {
+    display: "flex",
+    flexDirection: 'column',
+    alignItems: "center",
+    gap: '5px',
+    justifyContent: "center",
+    width: '65vw'
+}
 const displayColumn = {
     display: "flex",
     flexDirection: 'column',
     alignItems: "center",
     gap: '5px',
-    justifyContent: "center"
+    justifyContent: "center",
+    width: '25vw'
 }
 
 const textInformation = {
@@ -18,7 +27,7 @@ const textInformation = {
 }
 
 const AboutUsMaps = () => {
-    const [currentLocation, setCurrentLocation] = useState(addressesSyG[0]);
+    const [currentLocation, setCurrentLocation] = useState("");
     const [mapUrl, setMapUrl] = useState("");
 
     useEffect(() => {
@@ -35,7 +44,7 @@ const AboutUsMaps = () => {
     return (
         <Box>
             <Box sx={{ display: 'flex', justifyContent: 'space-around', flexWrap: "wrap", mt: "-25px"}}>
-                <Box sx={{ ...displayColumn }}>
+                <Box sx={{ ...displayMaps }}>
                     <Typography sx={{ ...textInformation }}>
                     <h1>Ubicación</h1>
                     </Typography>
@@ -43,8 +52,8 @@ const AboutUsMaps = () => {
                         <iframe
                             title="ubicacion farmacia S y G"
                             src={mapUrl}
-                            width="400"
-                            height="270"
+                            width="100%"
+                            height="450"
                             style={{ border: 0 }}
                             allowfullscreen=""
                             loading="lazy"

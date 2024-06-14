@@ -1,35 +1,49 @@
-// import { 
-//     insertProductsDB
-// } from "../models/productsModel.js";
-// import { handleError } from "../utils/utils.js";
+import multer from "multer";
+// import csv from "csv-parser";
+// import fs from "fs";
+// import { insertCSV } from "../models/productModel.js"
 
-// //Agrego y actualizo los productos de la base de datos
-// const addProducts = async (req, res) => {
-//     const { items } = req.body;
-//     if (!Array.isArray(items) || items.length === 0) {
-//         return res.status(400).json({ error: 'El cuerpo de la solicitud debe contener una lista de productos en "items".' });
-//     }
-//     console.log(req.body);
-//     try {
-//         let id = "";
-//         let name = "";
-//         let product_type = "";
-//         // Espera a que se resuelvan todas las consultas de inserción en paralelo
-//         const response = await Promise.all(items.map(async (item) => {
-            
-//                 id = item.id;
-//                 name = item.name;
-//                 product_type = item.product_type_name
-        
-//             return await insertProductsDB(id, name, product_type);
-//         }));
-//         res.status(201).json({ products: response });
-//     } catch (error) {
-//         const errorFound = handleError(error.code) || [{ status: 500, message: 'Error interno del servidor' }];
-//         return res.status(errorFound[0]?.status).json({ error: errorFound[0]?.message });
-//     }
-// };
 
-// export {
-//     addProducts
-// }
+  const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, 'uploads')
+    },
+    filename: function (req, file, cb){
+      cb(null, `${Date.now()}_${file.originalname}`)
+    }
+  })
+  
+  const uploadSingleFile = multer({ storage: storage });
+  export const upload = uploadSingleFile.single('myFile');
+
+  //Aqui envio los datos a la base de datos
+  export const uploadFile = (req, res) => {
+    // if (!req.file) {
+    //   return res.status(400).send({ response: 'No se ha cargado ningún archivo' });
+    // }
+      res.send({response: 'Archivo cargado con exito'})
+  };
+  
+  
+  // upload.single('file')(req, res, async (err) => {
+  //   if (err) {
+  //     return res.status(400).send({ error: 'Error al subir el archivo' });
+  //   }
+
+    // const filePath = req.file.path;
+    // const results = [];
+
+  //   fs.createReadStream(filePath)
+  //     .pipe(csv())
+  //     .on('data', (data) => results.push(data))
+  //     .on('end', async () => {
+  //       try {
+  //         await insertCSV(results);
+  //         fs.unlinkSync(filePath); // Elimina el archivo después de procesarlo
+  //         res.status(200).json({ message: 'Datos insertados correctamente' });
+  //       } catch (err) {
+  //         console.error('Error al insertar los datos', err);
+  //         res.status(500).json({ error: 'Error al insertar los datos' });
+  //       }
+  //     });
+  // });

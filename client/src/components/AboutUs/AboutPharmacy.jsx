@@ -3,7 +3,7 @@ import { linkStyles } from '../Footer/LinkStyles.jsx';
 import { FaFacebookF, FaXTwitter } from 'react-icons/fa6';
 import { CiInstagram } from 'react-icons/ci';
 import { FaWhatsapp } from 'react-icons/fa';
-import AboutUsMaps from './AboutUsMaps.jsx';
+import Facebook from "../Facebook/Facebook.jsx";
 
 const styleSocialMedia = {
     color: 'var(--background-navba-color)',
@@ -47,7 +47,7 @@ const AboutPharmacy = () => {
                 </Box>
             </Grid>
             <Grid item xs={12} md={6} lg={6}>
-                <AboutUsMaps />
+                <Facebook />
             </Grid>
             <Grid item xs={12} lg={12}>
                 <Box>

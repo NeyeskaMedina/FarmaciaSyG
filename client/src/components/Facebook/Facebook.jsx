@@ -4,7 +4,7 @@ export const Facebook = () => {
     return (
         <>
             <div 
-                // style="vertical-align: bottom; width: 484px; height: 575px;"
+                style={{display: "flex", justifyContent: "center"}}
             >
                 <iframe 
                     name="fafc420f2a4bb3458" 

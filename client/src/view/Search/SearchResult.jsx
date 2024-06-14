@@ -31,7 +31,7 @@ const SearchResult = () => {
       <>
       <ProductCard 
         products={response}
-        product={name}
+        productName={name}
       />      
       </>
       )

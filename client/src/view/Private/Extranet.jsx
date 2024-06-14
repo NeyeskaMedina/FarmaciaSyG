@@ -1,8 +1,22 @@
-import React from 'react'
+import * as React from 'react';
+import { Box } from '@mui/material';
+import HeadPrivate from "./HeadPrivate.jsx"
+import { BtnInstruction } from "../../components/Buttons/ButtonInstruction/BtnInstruction.jsx";
+import TablePrivate from "../../components/Private/TablePrivate.jsx";
 
 export const Extranet = () => {
-  return (
-    <div>Private</div>
-  )
+      return (
+        <>
+        <Box sx={{display:'flex', flexDirection:'column'}}>
+          <Box sx={{display:'flex', justifyContent:'space-between'}}>
+            <h1 style={{fontFamily:'var(--font-title)'}}>Proveedores</h1>
+            <BtnInstruction />
+          </Box>
+              <HeadPrivate />
+        </Box>
+        <TablePrivate/>
+        </>
+      );
+
 }
 export default Extranet;

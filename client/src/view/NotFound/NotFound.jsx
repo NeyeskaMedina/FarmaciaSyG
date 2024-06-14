@@ -12,17 +12,16 @@ const bgImage = {
     height: "71vh",
 };
 
-// const Img404 = {
-//     margin: "4% 35%",
-//     width: "30%",
-//     height: "80%",
-// }
+const Img404 = {
+    margin: "4% 35%",
+    width: "30%",
+    height: "80%",
+}
 
 const NotFound = () => {
     return (
         <Container maxWidth="xl" sx={{ ...bgImage }}>
-            {/* <img style={{ ...Img404 }} src="https://firebasestorage.googleapis.com/v0/b/farmacias-syg.appspot.com/o/imagenes%2F404.png?alt=media&token=03b9aeab-c6a7-47ff-b5db-1fb926a870ac" alt="gorila con cartel que dice 404" /> */}
-        <h1 style={{ textAlign: 'center', paddingTop: '20%'}}>404 - PAGINA NO ENCONTRADA</h1>
+            <img style={{ ...Img404 }} src="https://firebasestorage.googleapis.com/v0/b/farmacias-syg.appspot.com/o/imagenes%2F404.png?alt=media&token=03b9aeab-c6a7-47ff-b5db-1fb926a870ac" alt="gorila con cartel que dice 404" />
         </Container>
     );
 };

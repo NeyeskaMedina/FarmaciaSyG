@@ -12,7 +12,7 @@ export const AuthProvider = ({ children }) => {
         const { response } = await loginUser(dataUser)
 
         if (!Array.isArray(response)) {
-            setUser(response.user);
+            setUser(response.login.username);
             localStorage.setItem("token", response.token);
         } else {
             throw new Error("Credenciales inválidas");
