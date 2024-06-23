@@ -12,8 +12,11 @@ const loginUser = async (dataUser) => {
 };
 
 const postCSV = async (CSV) => {
+    
     try {
-        const response = await axios.post(`${URL}/products_costs`, CSV);
+        const response = await axios.post(`${URL}/products_costs`, CSV, {
+            headers: {'Content-Type': 'multipart/form-data'}
+        });
         return { response: response.data, error: null, loading: true }
     } catch (err) {
         console.error("Error al enviar datos a BD", err);

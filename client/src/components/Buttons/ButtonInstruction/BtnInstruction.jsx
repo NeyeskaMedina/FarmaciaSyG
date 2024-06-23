@@ -52,7 +52,7 @@ export const BtnInstruction = () => {
           </Typography> 
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                 1.- Admite solo archivos excel delimitados por comas. <br />
-                2.- El archivo deberá ir sin encabezado <br />
+                2.- Deberá indicar si el archivo tiene o no cabecera en el check correspondiente <br />
                 3.- Las columnas del archivo deben ser segun corresponda: <br />                     
                         <h3 style={{color: 'green', margin: '0'}}>codigo | nombre | precio-neto | precio-total</h3>
           </Typography>

@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { FaFileExcel } from "react-icons/fa";
 import { postCSV } from "../../apiRest/apiPharmacy/postPharmacy.js";
 import swal from "sweetalert";
+// import RadioHeader from "../../components/Private/RadioGroup/RadioHeader.jsx";
 import './style.css'
 
 const VisuallyHiddenInput = styled('input')`
@@ -23,12 +24,16 @@ const VisuallyHiddenInput = styled('input')`
 
 export const HeadPrivate = () => {
     const [selectedFile, setSelectedFile] = useState(null);
+    const [fileName, setFileName] = useState(null);
 
     const handleFileChange = async (event) => { 
         const file = event.target.files[0];
+        let filename;
         if (file) {
             const formData = new FormData();
             formData.append('myFile', file);
+            filename = formData.get('myFile').name;
+            setFileName(filename);
             setSelectedFile(formData);
         }
     };
@@ -88,7 +93,7 @@ export const HeadPrivate = () => {
                         <FaFileExcel />
                     </Box>
                     <Typography variant="body2">
-                        {selectedFile.name}
+                        {fileName}
                     </Typography>
                 </Box>
             )}
@@ -99,6 +104,7 @@ export const HeadPrivate = () => {
                     height:'5vh', 
                     margin:'4px', 
                     marginLeft: '4vw',
+                    marginRight: '4vw',
                     color: 'black', 
                     backgroundColor:'#fe48696f', 
                     '&:hover': {

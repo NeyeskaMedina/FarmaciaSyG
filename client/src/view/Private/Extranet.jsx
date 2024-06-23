@@ -4,13 +4,19 @@ import HeadPrivate from "./HeadPrivate.jsx"
 import { BtnInstruction } from "../../components/Buttons/ButtonInstruction/BtnInstruction.jsx";
 import TablePrivate from "../../components/Private/TablePrivate.jsx";
 
-export const Extranet = () => {
+
+export const Extranet = () => { 
       return (
         <>
-        <Box sx={{display:'flex', flexDirection:'column'}}>
+        <Box sx={{display:'flex', flexDirection:'column', marginBottom: '4vh'}}>
           <Box sx={{display:'flex', justifyContent:'space-between'}}>
             <h1 style={{fontFamily:'var(--font-title)'}}>Proveedores</h1>
-            <BtnInstruction />
+            <Box sx={{
+              display:'flex',
+              justifyContent:'flex-end'
+            }}>
+                <BtnInstruction />
+            </Box>
           </Box>
               <HeadPrivate />
         </Box>
