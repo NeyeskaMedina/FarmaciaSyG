@@ -24,9 +24,10 @@ CREATE TABLE Products (
 );
 
 CREATE TABLE Products_costs (
-    id INT PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
+    code_products INT,
     name VARCHAR(255) NOT NULL,
     price_neto DECIMAL(10, 2) NOT NULL,
     price_total DECIMAL(10, 2) NOT NULL,
-    proveedor VARCHAR(255) NOT NULL
+    id_proveedor VARCHAR(255) NOT NULL
 )
