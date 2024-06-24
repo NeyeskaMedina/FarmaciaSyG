@@ -40,7 +40,7 @@ export const uploadFile = (req, res) => {
   console.log(`resHeader: ${resHeader}`);
 
   const filePath = path.join(uploadDir, req.file.filename);
-  console.log(`filePath: ${filePath}`); // Verificar la ruta del archivo
+  // console.log(`filePath: ${filePath}`); 
   try {
     // Verificar que el filePath es un archivo, no un directorio
     const stat = fs.lstatSync(filePath);
@@ -59,7 +59,6 @@ export const uploadFile = (req, res) => {
     .on('data', (data) => results.push(data))
     .on('end', async () => {
       try {
-        console.log(results);
         // Llamar a la función para insertar datos en la base de datos
         await insertCSV(results);
         res.send({ response: 'Archivo cargado y datos insertados con éxito' });
@@ -67,7 +66,7 @@ export const uploadFile = (req, res) => {
         console.error(error);
         res.status(500).send({ response: 'Error al insertar datos en la base de datos' });
       } finally {
-        // Elimina el archivo después de procesarlo
+        // Elimina el archivo una vez ingresado a la base
         fs.unlink(filePath, (err) => {
           if (err) {
             console.error(`Error al eliminar el archivo: ${err}`);
@@ -80,3 +79,4 @@ export const uploadFile = (req, res) => {
       res.status(500).send({ response: `Error al procesar el archivo: ${error.message}` });
     });
 };
+

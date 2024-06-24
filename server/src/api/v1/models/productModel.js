@@ -33,6 +33,17 @@ const insertCSV = async (products) => {
   }
 };
 
+const getData = async () =>{
+    const SQLquery = {
+    text: `SELECT code_products, name, price_neto, price_total, id_proveedor 
+            FROM products_costs`
+  };
+
+  const response = await pool.query(SQLquery);
+  return response.rows;
+}
+
 export {
-  insertCSV
+  insertCSV,
+  getData
 };
