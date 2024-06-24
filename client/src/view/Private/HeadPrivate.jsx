@@ -25,6 +25,7 @@ const VisuallyHiddenInput = styled('input')`
 export const HeadPrivate = () => {
     const [selectedFile, setSelectedFile] = useState(null);
     const [fileName, setFileName] = useState(null);
+    const [isDisabled, setIsDisabled] = useState(true);
 
     const handleFileChange = async (event) => { 
         const file = event.target.files[0];
@@ -35,6 +36,7 @@ export const HeadPrivate = () => {
             filename = formData.get('myFile').name;
             setFileName(filename);
             setSelectedFile(formData);
+            setIsDisabled(false);
         }
     };
     const handleSend = async () => {
@@ -44,6 +46,7 @@ export const HeadPrivate = () => {
                 icon: "success",
             });
             setSelectedFile("");
+            setIsDisabled(true)
         } else {
             swal("¡Error al guardar archivo",
                 "Porfavor asegurese de subir un archivo.",
@@ -98,6 +101,7 @@ export const HeadPrivate = () => {
                 </Box>
             )}
             <Button
+            disabled={isDisabled}
             onClick={handleSend}
                 sx={{
                     with:'15vw', 

@@ -1,56 +1,55 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import {
-    DataGridPro,
-    useGridApiRef,
-    gridVisibleColumnDefinitionsSelector,
-    gridExpandedSortedRowIdsSelector,
-} from '@mui/x-data-grid-pro';
-import { useDemoData } from '@mui/x-data-grid-generator';
+import React, { useState, useEffect } from 'react';
+import { DataGrid } from '@mui/x-data-grid';
+import { getData } from "../../apiRest/apiPharmacy/getData.js";
 
-export const TablePrivate = () => {
-    const apiRef = useGridApiRef();
-    
-    const [coordinates, setCoordinates] = React.useState({
-        rowIndex: 0,
-        colIndex: 0,
-    });
-    const { data } = useDemoData({
-        dataSet: 'Commodity',
-        rowLength: 100,
-    });
-    console.log(data)
-    React.useEffect(() => {
-        const { rowIndex, colIndex } = coordinates;
-        apiRef.current.scrollToIndexes(coordinates);
-        const id = gridExpandedSortedRowIdsSelector(apiRef)[rowIndex];
-        const column = gridVisibleColumnDefinitionsSelector(apiRef)[colIndex];
-        apiRef.current.setCellFocus(id, column.field);
-    }, [apiRef, coordinates]);
-    
+const columns = [
+  { field: 'code_products', headerName: 'Código', width: 100 },
+  { field: 'name', headerName: 'Medicamentos', width: 600 },
+  { field: 'price_neto', headerName: 'Precio Neto', width: 130 },
+  { field: 'price_total', headerName: 'Precio Total', width: 130 },
+  { field: 'id_proveedor', headerName: 'ID Proveedor', width: 50 },
+];
 
-    const handleCellClick = (params) => {
-        const rowIndex = gridExpandedSortedRowIdsSelector(apiRef).findIndex(
-            (id) => id === params.id,
-        );
-        const colIndex = gridVisibleColumnDefinitionsSelector(apiRef).findIndex(
-            (column) => column.field === params.field,
-        );
-        setCoordinates({ rowIndex, colIndex });
+const TablePrivate = () => {
+  const [rows, setRows] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const updateData = async () => {
+      try {
+        const response = await getData();
+        const dataWithId = response.response.product.map((item, index) => ({
+          ...item,
+          id: item.code_products || index,
+        }));
+        setRows(dataWithId);
+        console.log(dataWithId);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error al obtener los datos', error);
+        setLoading(false);
+      }
     };
-    return (
-        <Box sx={{ width: '100%' }}>
-            
-            <Box sx={{ height: 400 }}>
-            <DataGridPro
-                apiRef={apiRef}
-                onCellClick={handleCellClick}
-                hideFooter
-                {...data}
-            />
-            </Box>
-        </Box>
-    );
-}
+
+    updateData();
+  }, []);
+
+  return (
+    <div style={{ height: 400, width: '100%' }}>
+      <DataGrid
+        rows={rows}
+        columns={columns}
+        loading={loading}
+        initialState={{
+          pagination: {
+            paginationModel: { page: 0, pageSize: 5 },
+          },
+        }}
+        pageSizeOptions={[5, 10]}
+        checkboxSelection
+      />
+    </div>
+  );
+};
 
 export default TablePrivate;

@@ -14,8 +14,12 @@ const loginUser = async (dataUser) => {
 const postCSV = async (CSV) => {
     
     try {
+        const token = window.localStorage.getItem("token");
         const response = await axios.post(`${URL}/products_costs`, CSV, {
-            headers: {'Content-Type': 'multipart/form-data'}
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'multipart/form-data'
+            }
         });
         return { response: response.data, error: null, loading: true }
     } catch (err) {

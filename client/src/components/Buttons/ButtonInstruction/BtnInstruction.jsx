@@ -2,6 +2,8 @@ import React from 'react'
 import { Typography, Box  } from '@mui/material';
 import Button from '@mui/joy/Button';
 import Modal from '@mui/material/Modal';
+import { FcSettings } from "react-icons/fc";
+import "./style.css";
 
 
 const style = {
@@ -21,25 +23,29 @@ export const BtnInstruction = () => {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
   return (
-    <>
+    <Box sx={{display: 'flex'}}>
+        <Box sx={{ display: 'flex', alignItems: 'center' }}>
         <Button 
             onClick={handleOpen}
             sx={{ 
                 with:'12vw', 
                 backgroundColor: 'white',
                 height:'4vh', 
-                margin:'4px',
-                marginTop: '3vh',
+                margin:'0px',
                 borderRadius: '0px',
                 borderBottom: '1px solid',
-                marginLeft: '4vw',
                 color: 'black',
                 '&:hover': {
-                    backgroundColor: '#f3f0f9'
+                    backgroundColor: '#d4e7f4'
                 }
             }}> 
             <Typography>Instrucciones</Typography> 
         </Button>
+        <FcSettings 
+            size={25}
+            className='iconSettings'
+        />
+        </Box>
       <Modal
         open={open}
         onClose={handleClose}
@@ -52,13 +58,13 @@ export const BtnInstruction = () => {
           </Typography> 
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                 1.- Admite solo archivos excel delimitados por comas. <br />
-                2.- Deberá indicar si el archivo tiene o no cabecera en el check correspondiente <br />
-                3.- Las columnas del archivo deben ser segun corresponda: <br />                     
-                        <h3 style={{color: 'green', margin: '0'}}>codigo | nombre | precio-neto | precio-total</h3>
+                2.- Las columnas del archivo deben ser segun corresponda: <br />    
+                3.- Debe estar registrado el proveedor antes de ingresar una tabla. <br />               
+                        <h3 style={{color: 'green', margin: '0'}}>codigo | nombre | precio-neto | precio-total | id-proveedor</h3>
           </Typography>
         </Box>
       </Modal>
-    </>
+    </Box>
   )
 }
 export default BtnInstruction;

@@ -1,0 +1,9 @@
+.iconSettings{
+    margin-left: 10px;
+    margin-right: 15px;
+    padding: 3px;
+}
+.iconSettings:hover{
+    background-color: #d4e7f4;
+    cursor: pointer;
+}
