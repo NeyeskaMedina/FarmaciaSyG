@@ -5,8 +5,9 @@ import { getData } from "../../apiRest/apiPharmacy/getData.js";
 const columns = [
   { field: 'code_products', headerName: 'Código', width: 100 },
   { field: 'name', headerName: 'Medicamentos', width: 600 },
+  { field: 'quantity_box', headerName: 'Un_x_caja', width: 100 },
   { field: 'price_neto', headerName: 'Precio Neto', width: 130 },
-  { field: 'price_total', headerName: 'Precio Total', width: 130 },
+  { field: 'date_expirate', headerName: 'Fecha vencimiento', width: 130 },
   { field: 'id_proveedor', headerName: 'ID Proveedor', width: 50 },
 ];
 
