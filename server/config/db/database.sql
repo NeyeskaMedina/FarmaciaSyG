@@ -27,7 +27,8 @@ CREATE TABLE Products_costs (
     id SERIAL PRIMARY KEY,
     code_products INT,
     name VARCHAR(255) NOT NULL,
+    quantity_box INT NOT NULL,
     price_neto DECIMAL(10, 2) NOT NULL,
-    price_total DECIMAL(10, 2) NOT NULL,
+    date_expirate TIMESTAMP NOT NULL,
     id_proveedor VARCHAR(255) NOT NULL
 )

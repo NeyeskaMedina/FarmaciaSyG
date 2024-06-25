@@ -9,19 +9,19 @@ const insertCSV = async (products) => {
 
     // Construcción de la consulta SQL
     const values = products.map((row, index) => {
-      const { code_products, name, price_neto, price_total, id_proveedor } = row;
-      return `($${index * 5 + 1}, $${index * 5 + 2}, $${index * 5 + 3}, $${index * 5 + 4}, $${index * 5 + 5})`;
+      const { code_products, name, quantity_box, price_neto, date_expirate, id_proveedor } = row;
+      return `($${index * 6 + 1}, $${index * 6 + 2}, $${index * 6 + 3}, $${index * 6 + 4}, $${index * 6 + 5}, $${index * 6 + 6})`;
     }).join(',');
 
     const queryText = `
-      INSERT INTO products_costs (code_products, name, price_neto, price_total, id_proveedor)
+      INSERT INTO products_costs (code_products, name, quantity_box, price_neto, date_expirate, id_proveedor)
       VALUES ${values}
     `;
 
     // Array con los valores para la consulta
     const queryParams = [];
     products.forEach(row => {
-      queryParams.push(row.code_products, row.name, row.price_neto, row.price_total, row.id_proveedor);
+      queryParams.push(row.code_products, row.name, row.quantity_box, row.price_neto, row.date_expirate, row.id_proveedor);
     });
 
     // Ejecuta la consulta
@@ -35,7 +35,7 @@ const insertCSV = async (products) => {
 
 const getData = async () =>{
     const SQLquery = {
-    text: `SELECT code_products, name, price_neto, price_total, id_proveedor 
+    text: `SELECT code_products, name, quantity_box, price_neto, date_expirate, id_proveedor 
             FROM products_costs`
   };
 
