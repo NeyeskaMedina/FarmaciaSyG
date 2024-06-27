@@ -43,7 +43,16 @@ const getData = async () =>{
   return response.rows;
 }
 
+const deleteModelDB = async () =>{
+  const SQLquery = {
+      text: `TRUNCATE TABLE products_costs RESTART IDENTITY`
+  };
+  const response = await pool.query(SQLquery);
+  return response.rows;
+}
+
 export {
   insertCSV,
-  getData
+  getData,
+  deleteModelDB
 };
