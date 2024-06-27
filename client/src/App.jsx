@@ -8,6 +8,8 @@ import SearchResult from "./view/Search/SearchResult.jsx";
 import Login from "../src/view/Login/Login.jsx";
 import Extranet from "./view/Private/Extranet.jsx";
 import { useAuth } from './context/useAuth.jsx';
+import { Box } from "@mui/material";
+import Search from "./components/Navbar/Search.jsx";
 
 
 function App() {
@@ -19,6 +21,7 @@ function App() {
       <div className='gridApp'>
         <header>
           <Navbar />
+          
         </header>
         <main>
           <Routes>
@@ -50,6 +53,9 @@ function App() {
 
           </Routes>
         </main>
+        <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none", xl: 'none' }, justifyContent: "center", alignItems: "center", position: 'fixed', botton: '13vh'}}>
+              <Search />
+        </Box>
         <footer style={{width: '-moz-available'}}>
                 <Footer />
         </footer>

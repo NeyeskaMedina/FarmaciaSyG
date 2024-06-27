@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import { getData } from "../../apiRest/apiPharmacy/getData.js";
+import { ContextGlobal } from "../../context/ContextGlobal.jsx";
 
 const columns = [
   { field: 'code_products', headerName: 'Código', width: 100 },
@@ -14,6 +15,7 @@ const columns = [
 const TablePrivate = () => {
   const [rows, setRows] = useState([]);
   const [loading, setLoading] = useState(true);
+  const { updateTable } = ContextGlobal();
 
   useEffect(() => {
     const updateData = async () => {
@@ -33,7 +35,7 @@ const TablePrivate = () => {
     };
 
     updateData();
-  }, []);
+  }, [updateTable]);
 
   return (
     <div style={{ height: 400, width: '100%' }}>

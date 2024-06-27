@@ -33,7 +33,8 @@
     "react-toastify": "^10.0.5",
     "standardjs": "^1.0.0-alpha",
     "styled-components": "^6.1.8",
-    "sweetalert": "^2.1.2"
+    "sweetalert": "^2.1.2",
+    "sweetalert2": "^11.12.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.64",

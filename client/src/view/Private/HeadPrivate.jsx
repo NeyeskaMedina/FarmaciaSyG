@@ -6,9 +6,14 @@ import { Box, Container, Typography  } from '@mui/material';
 import { useState } from 'react';
 import { FaFileExcel } from "react-icons/fa";
 import { postCSV } from "../../apiRest/apiPharmacy/postPharmacy.js";
-import swal from "sweetalert";
+import { deleteDB } from "../../apiRest/apiPharmacy/deleteDB.js";
+import Swal from "sweetalert2";
+import swal from "sweetalert"
 // import RadioHeader from "../../components/Private/RadioGroup/RadioHeader.jsx";
+import { ContextGlobal } from '../../context/ContextGlobal.jsx';
+import { FcDeleteDatabase } from "react-icons/fc";
 import './style.css'
+
 
 const VisuallyHiddenInput = styled('input')`
     clip: rect(0 0 0 0);
@@ -26,7 +31,15 @@ export const HeadPrivate = () => {
     const [selectedFile, setSelectedFile] = useState(null);
     const [fileName, setFileName] = useState(null);
     const [isDisabled, setIsDisabled] = useState(true);
-
+    const { updateTable, setUpdateTable } = ContextGlobal();
+    const [isHovered, setIsHovered] = useState(null)
+    
+    const handleMouseEnter = () =>{
+        setIsHovered(true)
+    }
+    const handleMouseLeave = () =>{
+        setIsHovered(false);
+    }
     const handleFileChange = async (event) => { 
         const file = event.target.files[0];
         let filename;
@@ -46,6 +59,7 @@ export const HeadPrivate = () => {
                 icon: "success",
             });
             setSelectedFile("");
+            setUpdateTable(!updateTable);
             setIsDisabled(true)
         } else {
             swal("¡Error al guardar archivo",
@@ -54,12 +68,40 @@ export const HeadPrivate = () => {
             );
         }
     };
+    const HandleDelete = () => {
+        Swal.fire({
+            title: '¿Estás seguro?',
+            text: '¡No podrás revertir esto!',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Sí, bórralo',
+            cancelButtonText: 'No, cancelar',
+          }).then( async (result) => {
+            if (result.isConfirmed) {
+                await deleteDB();
+                setUpdateTable(!updateTable);
+                setIsDisabled(true);
+                setSelectedFile(null)
+            Swal.fire(
+                '¡Borrado!',
+                'Tu archivo ha sido borrado.',
+                'success'
+            );
+            } else if (result.dismiss === Swal.DismissReason.cancel) {
+              Swal.fire(
+                'Cancelado',
+                'Tu archivo está seguro :)',
+                'error'
+              );
+            }
+          });
+    }
     return (
     <Container sx={{
         display: 'flex',
         flexDirection: 'column'
     }}>
-        <Box sx={{display:'flex'}}>
+        <Box sx={{display:'flex', alignItems: 'center'}}>
             <Button
                 title='Solo se admite archivo delimitado por comas'
                 sx={{with:'15vw', height:'5vh', margin:'4px', marginLeft: '4vw', '&:hover': {
@@ -118,6 +160,20 @@ export const HeadPrivate = () => {
                 }}
             > Guardar
             </Button>
+            <Box style={{'& hover': {
+                backgroundColor: 'var(--background-btn2)',
+            }}}>
+                <FcDeleteDatabase
+                    onClick={HandleDelete}
+                    size={30}
+                    title='Vaciar base de datos'
+                    style={{ cursor: 'pointer',
+                        backgroundColor: isHovered ? 'var(--font-bg)' : '',
+                    }}
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                />
+            </Box>
         </Box>
     </Container>
     )
