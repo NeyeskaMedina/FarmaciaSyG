@@ -12,7 +12,8 @@ const bgImage = {
     backgroundSize: "cover",
     backgroundAttachment: 'fixed',
     backgroundColor: "var(--background-body-color)",
-    marginTop: "8.35%",
+    margin: "0",
+    paddingTop: '15px'
 };
 export const Home = () => {
     // useEffect(() =>{
@@ -35,15 +36,15 @@ export const Home = () => {
             </section>
             <Carrusel />
 
-            <h2 style={{fontFamily:'var(--font-title)'}}>Productos destacados</h2>
-            <section className="cart-section">
-                <Box className="card-box">
+            {/* <h2 style={{fontFamily:'var(--font-title)'}}>Productos destacados</h2> */}
+            {/* <section className="cart-section"> */}
+                {/* <Box className="card-box"> */}
                     {/* {products.product.slice(0, 4).map((item, i) => (
                         <ProductCard key={i} product={item} favorite={searchFavoritebyProduct(item.product_id)}/>
                     ))} */}
-                    <h1>productos</h1>
-                </Box>
-            </section>
+                    {/* <ButtonsBlue /> */}
+                {/* </Box> */}
+            {/* </section> */}
             <Container sx={{ 
                 ...bgImage
             }}>

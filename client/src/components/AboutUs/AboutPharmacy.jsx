@@ -20,7 +20,7 @@ const AboutPharmacy = () => {
     return (
         <Grid container spacing={0.5} >
             <Grid item xs={12} md={6} lg={6}>
-                <Box>
+                <Box >
                     <Typography sx={{ fontFamily: 'var(--font-title)', textAlign: 'center' }}>
                         <h1>Sobre La Farmacia</h1>
                     </Typography>

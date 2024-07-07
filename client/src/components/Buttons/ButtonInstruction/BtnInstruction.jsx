@@ -3,6 +3,7 @@ import { Typography, Box  } from '@mui/material';
 import Button from '@mui/joy/Button';
 import Modal from '@mui/material/Modal';
 import { FcSettings } from "react-icons/fc";
+import { useNavigate } from "react-router-dom";
 import "./style.css";
 
 
@@ -19,9 +20,15 @@ const style = {
   
 
 export const BtnInstruction = () => {
+    const navigate = useNavigate();
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+
+    const handleConfig = (e) => {
+        e.preventDefault();
+        navigate('/config')
+    }
   return (
     <Box sx={{display: 'flex'}}>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
@@ -44,6 +51,7 @@ export const BtnInstruction = () => {
         <FcSettings 
             size={25}
             className='iconSettings'
+            onClick={handleConfig}
         />
         </Box>
       <Modal
@@ -57,10 +65,13 @@ export const BtnInstruction = () => {
             Instrucciones para cargar el archivo
           </Typography> 
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                1.- Admite solo archivos excel delimitados por comas. <br />
-                2.- Las columnas del archivo deben ser segun corresponda: <br />    
-                3.- Debe estar registrado el proveedor antes de ingresar una tabla. <br />               
-                        <h3 style={{color: 'green', margin: '0'}}>codigo | nombre | precio-neto | precio-total | id-proveedor</h3>
+                1.- Admite solo archivos excel delimitados por comas. <br />    
+                2.- Debe estar registrado el proveedor antes de ingresar una tabla. <br />
+                3.- Las columnas de precios deben estar en formato general.  <br />
+                4.- La columnas con valores NO pueden estar vacias.  <br />
+                5.- Las columnas del archivo deben ser segun corresponda: <br />
+                        <h3 style={{color: 'green', margin: '0'}}>code_products | name | quantity_box | price-neto | date_expirate | id-proveedor</h3> <br/>
+                6.- Verifique que se haya guardado correctamente su archivo
           </Typography>
         </Box>
       </Modal>

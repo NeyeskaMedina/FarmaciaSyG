@@ -7,6 +7,7 @@ import Footer from "./components/Footer/Footer.jsx";
 import SearchResult from "./view/Search/SearchResult.jsx";
 import Login from "../src/view/Login/Login.jsx";
 import Extranet from "./view/Private/Extranet.jsx";
+import Config from "./view/Configurations/Config.jsx";
 import { useAuth } from './context/useAuth.jsx';
 import { Box } from "@mui/material";
 import Search from "./components/Navbar/Search.jsx";
@@ -30,8 +31,8 @@ function App() {
             <Route path="/buscar-medicamento/:name" element={<SearchResult />} />
             <Route path="/login-extranet/grecia" element={<Login />} /> 
             <Route path="/extranet/" element={user ? <Extranet /> : <Extranet />} />
-            {/* <Route path="/register" element={<Register />} />
-            <Route path="/category/:id/:name" element={<Category />} />
+            <Route path="/config" element={<Config />} />
+            {/* <Route path="/category/:id/:name" element={<Category />} />
             <Route path="/resultados/:name" element={<SearchResult />} />
             <Route path="/admin" element={<AdminUserProfile />} />
             <Route path="/seller" element={<SellerUserProfile />} />

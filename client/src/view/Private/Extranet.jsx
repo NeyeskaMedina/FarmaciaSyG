@@ -20,7 +20,7 @@ export const Extranet = () => {
           </Box>
               <HeadPrivate />
         </Box>
-        <TablePrivate/>
+        <TablePrivate />
         </>
       );
 

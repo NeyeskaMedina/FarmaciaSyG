@@ -20,6 +20,7 @@ const searchProductBsale = async (name) =>{
             }
         });
         const result = response.data.items;
+        console.log(result);
         
     // SEGUN RESULTADO EXTRAIGO LO QUE NECESITO
         if (!result){
