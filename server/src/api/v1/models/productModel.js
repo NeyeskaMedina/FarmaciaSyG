@@ -35,7 +35,7 @@ const insertCSV = async (products) => {
 
 const getData = async () =>{
     const SQLquery = {
-    text: `SELECT code_products, name, quantity_box, price_neto, date_expirate, id_proveedor 
+    text: `SELECT id, code_products, name, quantity_box, price_neto, date_expirate, id_proveedor 
             FROM products_costs`
   };
 
