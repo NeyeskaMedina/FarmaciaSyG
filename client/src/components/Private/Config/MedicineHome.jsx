@@ -10,12 +10,11 @@ const MedicineHome = () => {
     const handleChange = (event) => {
         setMedHome(event.target.value);
     };
-  return (
-    <>
+return (
         <Box
             component="form"
             sx={{
-                '& .MuiTextField-root': { m: 1, width: '15vw' },
+                '& .MuiTextField-root': { width: '15vw' },
                 display: 'flex',
                 flexDirection: 'column'
             }}
@@ -48,7 +47,6 @@ const MedicineHome = () => {
                 </Select>  
             </Box>
         </Box>
-    </>
-  )
+)
 }
 export default MedicineHome;
