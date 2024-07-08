@@ -21,31 +21,33 @@ return (
             noValidate
             autoComplete="off"
         >
+            <h2 style={{ textAlign: 'center', margin: '0' }}>Actualiza los medicamentos del home</h2>
             <Box>
                 <TextField 
                     id="nombre_medicamento" 
                     label="Medicamento" 
                     variant="standard" 
+                    sx={{ margin: '10px' }}
                 />   
                 <TextField 
                     id="precio" 
                     label="Precio" 
+                    variant="standard"
+                    sx={{ margin: '10px' }} 
+                /> 
+                <TextField 
+                    id="stock" 
+                    label="Stock" 
                     variant="standard" 
-                />   
-                <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    value={medHome}
-                    label="Age"
-                    onChange={handleChange}
-                >
-                    <MenuItem value={1}>Posición 1</MenuItem>
-                    <MenuItem value={2}>Posición 2</MenuItem>
-                    <MenuItem value={3}>Posición 3</MenuItem>
-                    <MenuItem value={4}>Posición 4</MenuItem>
-                    <MenuItem value={5}>Posición 5</MenuItem>
-                </Select>  
+                    sx={{ margin: '10px' }}
+                /> 
             </Box>
+                <TextField 
+                    id="descripcion" 
+                    label="Descripcion" 
+                    variant="standard"
+                    sx={{ margin: '10px' }} 
+                />      
         </Box>
 )
 }

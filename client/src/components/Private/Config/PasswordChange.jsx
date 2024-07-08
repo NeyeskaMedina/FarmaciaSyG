@@ -12,7 +12,8 @@ const PasswordChange = () => {
               '& .MuiTextField-root': { m: 1, width: '25ch' },
               display: 'flex',
               flexDirection: 'column',
-              alignItems: 'center'
+              alignItems: 'center',
+              height: 'auto'
             }}
             noValidate
             autoComplete="off"

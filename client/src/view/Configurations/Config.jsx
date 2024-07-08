@@ -7,7 +7,16 @@ import PasswordChange from "../../components/Private/Config/PasswordChange.jsx";
 
 
 const Config = () => {
-    const [select, setSelect] = useState(1)
+    const [select, setSelect] = useState(1);
+    const bgImage = {
+        backgroundImage:
+            "url('https://firebasestorage.googleapis.com/v0/b/farmacias-syg.appspot.com/o/imagenes%2Fondas.png?alt=media&token=609c6221-06ce-405c-9ed9-b5e53b1d90fe')",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "",
+        backgroundAttachment: 'fixed',
+        backgroundColor: "",
+        padding: '15px'
+    };
     const handleConfig = () => {
 
     }
@@ -18,7 +27,7 @@ const Config = () => {
     return (
         <Box>
             <h1 style={{ marginTop: '10px', padding: '0' }}>Configuración</h1>
-            <Grid sx={{ height: '70vh' }} container spacing={2} columns={16}>
+            <Grid sx={{ height: 'auto' }} container spacing={2} columns={16}>
                     <Grid item xs={16} sm={6} md={6} lg={6} xl={6}>
                         <Box 
                             style={{ 
@@ -55,7 +64,7 @@ const Config = () => {
                         </Box>
                     </Grid>
                     <Grid item xs={16} sm={10} md={10} lg={10} xl={10}>
-                        <Paper sx={{ height: '80%', margin: '10px', padding: '16px' }}>
+                        <Paper sx={{ height: '80%', marginRight: '20px', marginLeft: '20px', padding: '2vw', ...bgImage }}>
                             {select === 1 ? <MedicineHome /> : <PasswordChange />}
                         </Paper>
                     </Grid>
