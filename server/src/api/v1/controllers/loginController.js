@@ -2,9 +2,9 @@ import 'dotenv/config'
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 
-import { verifyUser } from "../models/loginModel.js";
-import { handleError } from '../utils/utils.js';
 
+import { verifyUser, verifyPass, insertPass } from "../models/loginModel.js";
+import { handleError } from '../utils/utils.js';
 
 const loginController = async (req, res) => {
     
@@ -43,5 +43,29 @@ const loginController = async (req, res) => {
         res.status(500).json({erroresestan: err.message})
     }
 }
+const changeController = async (req, res) => {
+    try {
+        const { oldPassword, newPassword } = req.body;
+        const user = await verifyPass();
+        const equals = await bcrypt.compare(oldPassword, user.password);
+        console.log(equals);
+        if(equals){
+                const response = await insertPass(newPassword);
+                return res.status(200).json({ message: "Password cambiada correctamente", loading: true});
+        } else {
+            return res
+                .status(400).json({ error: "Password incorrecto", loading: false });
+        }
+    } catch (error) {
+        console.log("error changePassword: ",error)
+        const errorFound = handleError(error.code);
+        return res
+            .status(errorFound[0]?.status)
+            .json({ error: errorFound[0]?.message });
+    }
+}
 
-export { loginController };
+export { 
+    loginController,
+    changeController,
+};
