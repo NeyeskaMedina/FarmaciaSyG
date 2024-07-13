@@ -6,8 +6,6 @@
     height: 45px;
     color: var(--background-btn4);
     cursor: pointer;
-    margin: 2%;
-    margin-left: 6%;
     font-family: var(--font-body);
 }
 

@@ -27,8 +27,19 @@ const postCSV = async (CSV) => {
         return { response: [], error: "Error al enviar datos a BD", loading: false };
     }
 }
+const postChangePassword = async (dataPassword) => {
+    try {
+        const response = await axios.post(`${URL}/change-password`, dataPassword );
+        console.log(response.data);
+        return { response: response.data, error: null, loading: true };
+    } catch (err) {
+        console.error("Error al modificar la contraseña", err);
+        return { response: [], error: "Error al cambiar contraseña", loading: false };
+    }
+}
 
 export {
     loginUser,
-    postCSV
+    postCSV,
+    postChangePassword,
 }

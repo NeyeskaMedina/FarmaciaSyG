@@ -45,7 +45,7 @@ const AboutUsMaps = () => {
                 <Grid item xs={12} sm={8} md={8} lg={8} xl={8}>
                     <Box sx={{ ...displayMaps }}>
                         <Typography sx={{ ...textInformation }}>
-                        <h1>Ubicación</h1>
+                        <h2>Ubicación</h2>
                         </Typography>
                         {mapUrl && (
                             <iframe

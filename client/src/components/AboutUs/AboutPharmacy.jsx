@@ -22,7 +22,7 @@ const AboutPharmacy = () => {
             <Grid item xs={12} md={6} lg={6}>
                 <Box >
                     <Typography sx={{ fontFamily: 'var(--font-title)', textAlign: 'center' }}>
-                        <h1>Sobre La Farmacia</h1>
+                        <h2>Sobre La Farmacia</h2>
                     </Typography>
                     <Box sx={{ display: 'flex', flexDirection: 'column', gap: '5px', justifyContent: 'center', padding: "10px 45px" }}>
                         <Typography sx={{ ...textInformation }}>

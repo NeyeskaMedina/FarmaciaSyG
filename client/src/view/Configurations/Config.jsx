@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Box, Grid, Paper } from '@mui/material';
 import Button from '@mui/material/Button';
-import ButtonLittle from "../../components/Buttons/ButtonLittle/ButtonLittle.jsx";
+// import ButtonLittle from "../../components/Buttons/ButtonLittle/ButtonLittle.jsx";
 import MedicineHome from "../../components/Private/Config/MedicineHome.jsx";
 import PasswordChange from "../../components/Private/Config/PasswordChange.jsx";
 
@@ -64,19 +64,11 @@ const Config = () => {
                         </Box>
                     </Grid>
                     <Grid item xs={16} sm={10} md={10} lg={10} xl={10}>
-                        <Paper sx={{ height: '80%', marginRight: '20px', marginLeft: '20px', padding: '2vw', ...bgImage }}>
+                        <Paper sx={{ height: 'auto', marginRight: '20px', marginLeft: '20px', padding: '2vw', ...bgImage }}>
                             {select === 1 ? <MedicineHome /> : <PasswordChange />}
                         </Paper>
                     </Grid>
             </Grid>
-            <Box style={{ display: 'flex', width: '100%', justifyContent: 'center', marginTop: '20px' }}>
-                <ButtonLittle 
-                    onClick={{ handleConfig }}
-                    style={{ margin: '0' }}
-                >
-                    <p style={{fontSize: '16px', margin: '0'}}>Actualizar</p>
-                </ButtonLittle>
-            </Box>
         </Box>
     );
 }

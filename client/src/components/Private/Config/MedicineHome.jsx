@@ -1,6 +1,7 @@
 import React from 'react'
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
+import ButtonLittle from "../../../components/Buttons/ButtonLittle/ButtonLittle.jsx";
 import TextField from '@mui/material/TextField';
 import { Box } from '@mui/material';
 
@@ -47,7 +48,12 @@ return (
                     label="Descripcion" 
                     variant="standard"
                     sx={{ margin: '10px' }} 
-                />      
+                />
+                <ButtonLittle 
+                    style={{ margin: '0' }}
+                >
+                    <p style={{fontSize: '16px', margin: '0'}}>Actualizar</p>
+                </ButtonLittle>      
         </Box>
 )
 }

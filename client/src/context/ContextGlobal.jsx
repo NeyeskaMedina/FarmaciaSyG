@@ -5,6 +5,7 @@ export const DataContext = createContext();
 
 export const ContextProvider = ( {children} ) => {
     const [data, setData] = useState([]);
+    const [dataPassword, setDataPassword] = useState([])
     const [updateTable, setUpdateTable] = useState(false)
 
   
@@ -13,6 +14,8 @@ export const ContextProvider = ( {children} ) => {
           value={{
             data,
             updateTable,
+            dataPassword,
+            setDataPassword,
             setUpdateTable
           }}
       >
