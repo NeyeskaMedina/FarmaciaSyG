@@ -5,7 +5,7 @@ import loginRoutes from "./config/routes/loginRoutes.js";
 import productRoutes from "./config/routes/productRoutes.js";
 
 const app = express();
-const PORT = process.env.PORT_DB || 4000;
+const PORT = process.env.PORT_DB || 10000;
 
 
 app.use(express.json());
