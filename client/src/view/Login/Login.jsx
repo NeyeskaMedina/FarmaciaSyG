@@ -30,12 +30,6 @@ const Login = () => {
     const handleMouseDownPassword = (event) => {
       event.preventDefault();
     };
-//   const handleRegister = (e) => {
-//     e.preventDefault();
-//     navigate("/register");
-//   };
-
-
 
     const navigate = useNavigate();
     const handleLogin = async (e) => {
@@ -45,7 +39,7 @@ const Login = () => {
             swal("¡Has iniciado sesión correctamente!", {
                 icon: "success",
             });
-            navigate("/extranet/");
+            navigate("/farmacia-grecia-extranet/");
         } catch (error) {
             console.error("Error al iniciar sesión:", error);
             swal(

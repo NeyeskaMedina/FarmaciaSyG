@@ -4,8 +4,9 @@
     border: 1px solid var(--font-btn4-color);
     background-color: var(--font-btn1-color);
     color: var(--font-btn4-color);
-    width: 166px;
-    height: 45px;
+    width: 90px;
+    padding: 1vh;
+    height: auto;
     cursor: pointer;
     font-family: var(--font-body);
 }

@@ -4,10 +4,14 @@ import Button from '@mui/material/Button';
 // import ButtonLittle from "../../components/Buttons/ButtonLittle/ButtonLittle.jsx";
 import MedicineHome from "../../components/Private/Config/MedicineHome.jsx";
 import PasswordChange from "../../components/Private/Config/PasswordChange.jsx";
-
+import { FaArrowLeft } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom';
 
 const Config = () => {
     const [select, setSelect] = useState(1);
+    const [isHovered, setIsHovered] = useState();
+    const navigate = useNavigate();
+
     const bgImage = {
         backgroundImage:
             "url('https://firebasestorage.googleapis.com/v0/b/farmacias-syg.appspot.com/o/imagenes%2Fondas.png?alt=media&token=609c6221-06ce-405c-9ed9-b5e53b1d90fe')",
@@ -17,12 +21,13 @@ const Config = () => {
         backgroundColor: "",
         padding: '15px'
     };
-    const handleConfig = () => {
-
-    }
     const handleSubmenu = (num) => () => {
         setSelect(num);
     };
+    const handlePrevius = (e) => {
+        e.preventDefault();
+        navigate("/farmacia-grecia-extranet/");
+    }
     
     return (
         <Box>
@@ -34,6 +39,7 @@ const Config = () => {
                                 display:'flex', 
                                 flexDirection: 'column', 
                                 alignContent: 'center',
+                                justifyContent: 'space-between',
                                 padding: '5px',
                                 height: '100%',
                             }}
@@ -61,6 +67,17 @@ const Config = () => {
                                     Cambia tu contraseña
                                 </Button>
                             </Box>
+                            <FaArrowLeft 
+                                style={{
+                                    margin: '2vh', 
+                                    fontSize: '20px',
+                                    color: isHovered ? 'var(--background-btn1)' : 'var(--font-navbar-color3)',
+                                    cursor: 'pointer'
+                                }}
+                                onMouseEnter={() => setIsHovered(true)}
+                                onMouseLeave={() => setIsHovered(false)}
+                                onClick={handlePrevius}
+                            />
                         </Box>
                     </Grid>
                     <Grid item xs={16} sm={10} md={10} lg={10} xl={10}>

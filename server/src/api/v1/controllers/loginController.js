@@ -12,20 +12,12 @@ const loginController = async (req, res) => {
  
     try {
         const login = await verifyUser(user);
-        console.log(login.password);
-        console.log(password);
         if(!login){
             const searchErr = handleError("auth01")
             return res.status(400).json({ error: searchErr[0].message });
         }
-        // const isEqual = bcrypt.compareSync(password, login.password );
-        let isEqual = "";
-        if(password === login.password){
-            isEqual = true;
-        }else{
-            isEqual= false;
-        };
-
+        const isEqual = await bcrypt.compare(password, login.password );
+        console.log(isEqual);
         if(!isEqual){
             const searchErr = handleError("auth02")
             return res.status(400).json({  error: searchErr[0].message });

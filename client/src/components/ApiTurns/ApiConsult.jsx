@@ -37,7 +37,7 @@ export const ApiConsult = ({ data, setData, setOriginalData, setChangeSelect, ch
         const mapUrl=`https://maps.google.com/maps?q=${local.local_lat},${local.local_lng}&z=15&output=embed`
       return (
         <>
-        <Box sx={{ ...bgImage, width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '5vh', textAlign: 'center' }}>
+        <Box sx={{ ...bgImage, width: '100%', height: 'auto', display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '5vh', textAlign: 'center' }}>
         <Box style={{ width:'88%', marginTop: '8px', fontWeight:'500', height: '6vh', display: 'flex',padding: '5px 10px 5px 10px',alignItems: 'center', justifyContent:'space-evenly', color:'#fe486a' }}>
           <p style={{margin:'0', width: '25%'}}>Farmacia</p>
           <p style={{margin:'0', width: '25%'}}>Direccion</p>
@@ -56,7 +56,7 @@ export const ApiConsult = ({ data, setData, setOriginalData, setChangeSelect, ch
             title={local.local_nombre}
             src={mapUrl} 
             width="90%" 
-            height="450px" 
+            height="600px" 
             style={{border:"0", bordeRadius:'20px 20px 20px 20px'}} 
             allowFullScreen="" 
             loading="lazy" 

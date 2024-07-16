@@ -1,10 +1,14 @@
 import "./styleButton.css";
 import { NavLink } from 'react-router-dom';
 
-const ButtonLittleoutline = ({ onClick, children, to }) => {
+const ButtonLittleoutline = ({ sx, onClick, children, to }) => {
   return (
     <NavLink to={to}>
-      <button onClick={onClick} className="button_little_outline">
+      <button 
+          onClick={onClick} 
+          className="button_little_outline" 
+          sx={sx}
+      >
         {children}
       </button>
     </NavLink>

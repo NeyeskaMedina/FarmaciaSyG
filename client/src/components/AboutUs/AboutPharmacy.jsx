@@ -6,7 +6,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 import Facebook from "../Facebook/Facebook.jsx";
 
 const styleSocialMedia = {
-    color: 'var(--background-navba-color)',
+    color: 'var(--font-btn6-color)',
     fontSize: '25px',
     textAlign: 'center',
 }
