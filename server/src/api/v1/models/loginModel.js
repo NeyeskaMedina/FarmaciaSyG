@@ -11,8 +11,6 @@ const verifyUser = async (user) => {
     }
     const response = await pool.query(sqlQuery);
     return response.rows[0];
-
-    
 }
 
 const verifyPass = async () => {
