@@ -29,7 +29,13 @@ const postCSV = async (CSV) => {
 }
 const postChangePassword = async (dataPassword) => {
     try {
-        const response = await axios.post(`${URL}/change-password`, dataPassword );
+        const token = window.localStorage.getItem("token");
+        const response = await axios.post(`${URL}/change-password`, dataPassword, {
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'multipart/form-data'
+            }
+        });
         console.log(response.data);
         return { response: response.data, error: null, loading: true };
     } catch (err) {

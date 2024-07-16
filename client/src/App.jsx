@@ -10,7 +10,8 @@ import Extranet from "./view/Private/Extranet.jsx";
 import Config from "./view/Configurations/Config.jsx";
 import { useAuth } from './context/useAuth.jsx';
 import { Box } from "@mui/material";
-import Search from "./components/Navbar/Search.jsx";
+// import Search from "./components/Navbar/Search.jsx";
+import { IoMdSearch } from "react-icons/io";
 
 
 function App() {
@@ -29,9 +30,9 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/Farmacia-de-turno" element={<PharmacyTurn />} />
             <Route path="/buscar-medicamento/:name" element={<SearchResult />} />
-            <Route path="/login-extranet/grecia" element={<Login />} /> 
-            <Route path="/extranet/" element={user ? <Extranet /> : <Extranet />} />
-            <Route path="/config" element={<Config />} />
+            <Route path="/login" element={<Login />} /> 
+            <Route path="/farmacia-grecia-extranet/" element={user ? <Extranet /> : <Login />} />
+            <Route path="/config" element={user ? <Config /> : <Login />} />
             {/* <Route path="/category/:id/:name" element={<Category />} />
             <Route path="/resultados/:name" element={<SearchResult />} />
             <Route path="/admin" element={<AdminUserProfile />} />
@@ -54,9 +55,15 @@ function App() {
 
           </Routes>
         </main>
-        <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none", xl: 'none' }, justifyContent: "center", alignItems: "center", position: 'fixed', botton: '13vh'}}>
-              <Search />
-        </Box>
+              <IoMdSearch 
+                  size={30}
+                  sx={{
+                      flexGrow: 1, 
+                      display: { xs: "flex", md: "none", xl: 'none' }, 
+                      position: 'fixed',
+                      marginBottom: '0'
+                  }}
+              />
         <footer style={{width: '-moz-available'}}>
                 <Footer />
         </footer>

@@ -8,7 +8,6 @@ import {
     ListItemButton,
 } from "@mui/material";
 import { NavLink } from "react-router-dom";
-// import Search from "./Search.jsx";
 import MenuIcon from "@mui/icons-material/Menu";
 import { buttonStyles } from "./StyleHoverButtons.jsx";
 
@@ -94,13 +93,6 @@ export default function BurguerMenu() {
                         >
                             Farmacia de Turno
                         </ListItemButton>
-                        {/* <ListItem
-                            sx={{
-                                borderBottom: "30px solid var(--background-footer-color2)",
-                            }}
-                        >
-                            <Search />
-                        </ListItem> */}
                     </List>
                 </Box>
             </Drawer>
