@@ -23,20 +23,12 @@ CREATE TABLE Products (
     product_type VARCHAR(255)
 );
 
-CREATE TABLE Variants (
-    variant_id INT PRIMARY KEY,
-    description TEXT NOT NULL,
-    imageURL VARCHAR(255)NOT NULL,
-    stockVariant INT NOT NULL,
-    product_id INT REFERENCES Products(product_id),
-    FOREIGN KEY (product_id) REFERENCES Products(product_id)
+CREATE TABLE Products_costs (
+    id SERIAL PRIMARY KEY,
+    code_products INT,
+    name VARCHAR(255) NOT NULL,
+    quantity_box INT NOT NULL,
+    price_neto DECIMAL(10, 2) NOT NULL,
+    date_expirate TIMESTAMP NOT NULL,
+    id_proveedor VARCHAR(255) NOT NULL
 )
-
-CREATE TABLE Price (
-    price_id INT PRIMARY KEY,
-    value DECIMAL(7,2) NOT NULL,
-    value_taxes DECIMAL(7,2) NOT NULL,
-    variant_id INT REFERENCES Variants(variant_id),
-    FOREIGN KEY (variant_id) REFERENCES Variants(variant_id)
-)
-

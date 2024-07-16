@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import { searchProductBsale } from "../../apiRest/apiBsale/consultBsale.js";
 import ProductCard from "../../components/ProductCard/ProductCard.jsx";
 import { Box } from "@mui/material";
+import CircularProgressWithLabel from "../../components/Loading/LoadingLabel.jsx";
 import './loading.css'
 
 const SearchResult = () => {
@@ -31,16 +32,16 @@ const SearchResult = () => {
       <>
       <ProductCard 
         products={response}
-        product={name}
+        productName={name}
       />      
       </>
       )
     } else {
       return (
       <>
-        <Box sx={{ display: 'flex', width: '100%', height: '50vh', justifyContent: 'center', alignItems: 'center' }}>
-          <p style={{ fontSize: '20px' }}>Cargando...</p>
-          <img className='rotate' style={{width: '50px'}} src={relativeImagePath} alt="" />
+        <Box sx={{ display: 'flex', width: '100%', height: '68vh', justifyContent: 'center', alignItems: 'center' }}>
+          {/* <p style={{ fontSize: '20px' }}>Cargando...</p> */}
+          <CircularProgressWithLabel value={100} />
         </Box>
       </>
       )

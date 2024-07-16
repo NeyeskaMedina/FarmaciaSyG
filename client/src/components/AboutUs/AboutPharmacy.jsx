@@ -3,7 +3,7 @@ import { linkStyles } from '../Footer/LinkStyles.jsx';
 import { FaFacebookF, FaXTwitter } from 'react-icons/fa6';
 import { CiInstagram } from 'react-icons/ci';
 import { FaWhatsapp } from 'react-icons/fa';
-import AboutUsMaps from './AboutUsMaps.jsx';
+import Facebook from "../Facebook/Facebook.jsx";
 
 const styleSocialMedia = {
     color: 'var(--background-navba-color)',
@@ -20,9 +20,9 @@ const AboutPharmacy = () => {
     return (
         <Grid container spacing={0.5} >
             <Grid item xs={12} md={6} lg={6}>
-                <Box>
+                <Box >
                     <Typography sx={{ fontFamily: 'var(--font-title)', textAlign: 'center' }}>
-                        <h1>Sobre La Farmacia</h1>
+                        <h2>Sobre La Farmacia</h2>
                     </Typography>
                     <Box sx={{ display: 'flex', flexDirection: 'column', gap: '5px', justifyContent: 'center', padding: "10px 45px" }}>
                         <Typography sx={{ ...textInformation }}>
@@ -47,7 +47,7 @@ const AboutPharmacy = () => {
                 </Box>
             </Grid>
             <Grid item xs={12} md={6} lg={6}>
-                <AboutUsMaps />
+                <Facebook />
             </Grid>
             <Grid item xs={12} lg={12}>
                 <Box>

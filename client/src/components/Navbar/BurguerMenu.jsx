@@ -8,7 +8,7 @@ import {
     ListItemButton,
 } from "@mui/material";
 import { NavLink } from "react-router-dom";
-import PrivateUser from "./PrivateUser.jsx";
+// import Search from "./Search.jsx";
 import MenuIcon from "@mui/icons-material/Menu";
 import { buttonStyles } from "./StyleHoverButtons.jsx";
 
@@ -94,13 +94,13 @@ export default function BurguerMenu() {
                         >
                             Farmacia de Turno
                         </ListItemButton>
-                        <ListItem
+                        {/* <ListItem
                             sx={{
                                 borderBottom: "30px solid var(--background-footer-color2)",
                             }}
                         >
-                            <PrivateUser />
-                        </ListItem>
+                            <Search />
+                        </ListItem> */}
                     </List>
                 </Box>
             </Drawer>

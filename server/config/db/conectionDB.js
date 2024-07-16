@@ -9,7 +9,7 @@ const pool = new pg.Pool({
     // allowExitOnIdle: true
     connectionString: process.env.DATABASE_URL
 })
-console.log(process.env.DATABASE_URL);
+// console.log(process.env.DATABASE_URL);
 pool.connect((err) => {
     if (err) {
         console.error('Error connecting to database', err);

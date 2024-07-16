@@ -1,47 +1,47 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Grid } from "@mui/material";
 import "./select.css"
 
 export const SelectSearch = ( {setData, setLoading, setChangeSelect, originalData} ) => {
-  
+  const [isDisabled, setIsDisabled] = useState(true);
+  const [dataComuna, setDataComuna] = useState([]);
+
   const handleChange = (e) => {
     const searchValue = e.target.value;
+    setIsDisabled(false);
     if (searchValue === "Seleccione una region"){
+        setIsDisabled(true)
         setLoading(false);
         setData(originalData);
         setChangeSelect(true);
     }
+    // filtro datos segun region seleccionada
     const datosFiltrados = originalData.filter((region) =>
     region.fk_region === searchValue);
     setData(datosFiltrados);
+    setDataComuna(datosFiltrados);
   }
   const handleChangeComuna = (e) =>{
     const searchValue = e.target.value;
-    if (searchValue === "Seleccione una region"){
+    if (searchValue === "Seleccione una comuna"){
       setLoading(false);
       setData(originalData);
       setChangeSelect(true);
-    }
-    const datosFiltrados = originalData.filter((comuna) =>
-      comuna.fk_comuna === searchValue);
+    } else {
+    
+      const datosFiltrados = dataComuna.filter((comuna) =>
+        comuna.fk_comuna === searchValue);
       setData(datosFiltrados);
+    }
+ 
   }
-  const uniqueLocations = {};
-  const locationComuna = originalData.filter((location) => {
-      if (uniqueLocations[location.comuna_nombre]) {
-          return false;
-      } else {location
-          uniqueLocations[location.comuna_nombre] = true;
-          return true;
-      }
-  });
   return (
     <>
         <h1 style={{width:"100%", textAlign: "center"}}>Encuentra la Farmacia de turno</h1>
         <Grid container spacing={0.5}> 
             <Grid item xs={12} md={6} lg={6}>
                 <div className="selectBuscador">
-                    <select onChange={handleChange} className="form-select" aria-label="Default select example">
+                    <select onChange={handleChange} className="form-select hover-select" aria-label="Default select example">
                             <option value="Seleccione una region">Seleccione una region</option>
                             <option value="1">Arica y Parinacota</option>
                             <option value="2">Tarapaca</option>
@@ -64,9 +64,9 @@ export const SelectSearch = ( {setData, setLoading, setChangeSelect, originalDat
             </Grid>
             <Grid item xs={12} md={6} lg={6}>
                 <div className="selectBuscador">
-                    <select onChange={handleChangeComuna} className="form-select" aria-label="Default select example">
+                    <select disabled={isDisabled} onChange={handleChangeComuna} className={isDisabled === false ? "form-select hover-select": "form-select"} aria-label="Default select example" defaultValue="Seleccione una comuna">
                             <option value="Seleccione una region">Seleccione una comuna</option>
-                            {locationComuna.map((item) => (
+                            {dataComuna.map((item) => (
                               <option value={item.fk_comuna}>{item.comuna_nombre}</option>
                             ))}
                     </select>

@@ -11,7 +11,7 @@ import ButtonLittleoutline from '../Buttons/ButtonLittleputline/ButtonLittleputl
 import 'react-toastify/dist/ReactToastify.css';
 
 
-export default function ProductCard({ products, product }) {
+export default function ProductCard({ products, productName }) {
   const imageURL = 'https://www.ecofarmacias.cl/wp-content/uploads/2020/03/losartan-1-1.jpg'
     // const [openSnack, setOpenSnack] = useState(false)
     
@@ -56,13 +56,13 @@ return (
             <Box className='block-icon'>
               <CardMedia
                 sx={{ height: "150px" }}
-                alt={product}
+                alt={productName}
                 image={imageURL}
-                title={product}
+                title={productName}
               />
             </Box>
             <Typography variant="bold" component="h3" color="textSecondary" >
-              {product}
+              {productName}
             </Typography>
             <Typography variant="normal" component="h5" color="textSecondary" >
               {item.name}

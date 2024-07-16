@@ -1,14 +1,21 @@
 import  { useState, useEffect } from 'react';
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Grid } from "@mui/material";
 import ButtonLittle from '../Buttons/ButtonLittle/ButtonLittle.jsx';
 import addressesSyG from '../../json/addressesSyG.json';
 
+const displayMaps = {
+    display: "flex",
+    flexDirection: 'column',
+    alignItems: "center",
+    gap: '5px',
+    justifyContent: "center",
+}
 const displayColumn = {
     display: "flex",
     flexDirection: 'column',
     alignItems: "center",
     gap: '5px',
-    justifyContent: "center"
+    justifyContent: "center",
 }
 
 const textInformation = {
@@ -18,7 +25,7 @@ const textInformation = {
 }
 
 const AboutUsMaps = () => {
-    const [currentLocation, setCurrentLocation] = useState(addressesSyG[0]);
+    const [currentLocation, setCurrentLocation] = useState("");
     const [mapUrl, setMapUrl] = useState("");
 
     useEffect(() => {
@@ -34,35 +41,39 @@ const AboutUsMaps = () => {
 
     return (
         <Box>
-            <Box sx={{ display: 'flex', justifyContent: 'space-around', flexWrap: "wrap", mt: "-25px"}}>
-                <Box sx={{ ...displayColumn }}>
-                    <Typography sx={{ ...textInformation }}>
-                    <h1>Ubicación</h1>
-                    </Typography>
-                    {mapUrl && (
-                        <iframe
-                            title="ubicacion farmacia S y G"
-                            src={mapUrl}
-                            width="400"
-                            height="270"
-                            style={{ border: 0 }}
-                            allowfullscreen=""
-                            loading="lazy"
-                            referrerPolicy="no-referrer-when-downgrade"
-                        ></iframe>
-                    )}
-                    <Typography sx={{ ...textInformation, fontFamily: 'var(--font-body)' }}>
-                        {currentLocation.nombre}
-                    </Typography>
-                </Box>
-                <Box sx={{ ...displayColumn }}>
-                    {addressesSyG.map(location => (
-                        <ButtonLittle key={location.id} onClick={() => handleLocationClick(location)}>
-                            {location.id === 1 ? 'Av Grecia': location.id === 2 ? 'Arturo Prat': 'Av Granaderos'}
-                        </ButtonLittle>
-                    ))}
-                </Box>
-            </Box>
+            <Grid sx={{ height: 'auto' }} container spacing={2} columns={12}>
+                <Grid item xs={12} sm={8} md={8} lg={8} xl={8}>
+                    <Box sx={{ ...displayMaps }}>
+                        <Typography sx={{ ...textInformation }}>
+                        <h2>Ubicación</h2>
+                        </Typography>
+                        {mapUrl && (
+                            <iframe
+                                title="ubicacion farmacia S y G"
+                                src={mapUrl}
+                                width="100%"
+                                height="450"
+                                style={{ border: 0 }}
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                            ></iframe>
+                        )}
+                        <Typography sx={{ ...textInformation, fontFamily: 'var(--font-body)' }}>
+                            {currentLocation.nombre}
+                        </Typography>
+                    </Box>
+                </Grid>
+                <Grid sx={{ alignContent: 'center' }} item xs={12} sm={4} md={4} lg={4} xl={4}>
+                    <Box sx={{ ...displayColumn }}>
+                        {addressesSyG.map(location => (
+                            <ButtonLittle key={location.id} onClick={() => handleLocationClick(location)}>
+                                {location.id === 1 ? 'Av Grecia': location.id === 2 ? 'Arturo Prat': 'Av Granaderos'}
+                            </ButtonLittle>
+                        ))}
+                    </Box>
+                </Grid>
+            </Grid>
         </Box>
     );
 };
