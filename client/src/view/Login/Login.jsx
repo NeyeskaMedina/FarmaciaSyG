@@ -17,7 +17,7 @@ import InputAdornment from '@mui/material/InputAdornment';
 import IconButton from '@mui/material/IconButton';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import "./style.css";
+import "./styleLogin.css";
 
 const Login = () => {
     const { loginAuth } = useAuth();
@@ -53,7 +53,7 @@ const Login = () => {
 return (
     <div className="login_page">
         <Container>
-            <Box sx={{ flexGrow: 1 }} display="flex">
+            <Box sx={{ flexGrow: 1 }} >
                 <Grid container spacing={2} columns={16}>
                     <Grid item xs={8}  >
                         <div className="login_img">

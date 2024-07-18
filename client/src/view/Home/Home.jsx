@@ -16,18 +16,6 @@ const bgImage = {
     paddingTop: '15px'
 };
 export const Home = () => {
-    // useEffect(() =>{
-    //     const updateDataBase = async () => {
-    //             console.log("Se Actualiza la base de datos desde el servidor")
-    //         try {
-    //             await updateDB();
-    //             console.log('¡Base de datos actualizada!')
-    //         } catch (err) {
-    //             console.error(err)
-    //         }   
-    //     }    
-    //     updateDataBase();
-    // }, []);
     return (
         <div className="home" >
             <section className="home_carrusel">

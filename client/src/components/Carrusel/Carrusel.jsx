@@ -46,59 +46,54 @@ const Carrusel = () => {
     };
 
 return (
-    <section>
-    <Box sx={{ maxWidth: 400, flexGrow: 1 }}>
-        <Paper
-            square
-            elevation={0}
-            sx={{
-                display: 'flex',
-                alignItems: 'center',
-                height: 50,
-                pl: 2,
-                bgcolor: 'background.default',
-            }}
-        >
-          <Typography>{/* Aquí puedes mostrar el título si lo deseas */}</Typography>
-        </Paper>
-        
-        <Box sx={{ height: 255, p: 2 }}>
-            <div className='carrusel_img'>
-            <img  src={steps[activeStep].description} alt="" />
-            </div>
+    <section style={{width: '100vw'}}>
+        <Box sx={{ maxWidth: '92%',
+                        flexGrow: 1,
+                        margin: 'auto',
+                        textAlign: 'center', 
+                }}>
+                
+            <Box sx={{ height: 255, p: 2 }}>
+                <div className='carrusel_img'>
+                <img  src={steps[activeStep].description} alt="" 
+                    style={{
+                        width: '98%'
+                    }} 
+                />
+                </div>
 
-        </Box>
-        <MobileStepper
-            variant="dots"
-            steps={maxSteps}
-            position="static"
-            activeStep={activeStep}
-            nextButton={
-            <Button
-                size="small"
-                onClick={handleNext}
-                disabled={maxSteps === 0}
-            >
-                Next
-                {theme.direction === 'rtl' ? (
-                        <KeyboardArrowLeft />
-                ) : (
-                <KeyboardArrowRight />
-                )}
-            </Button>
-        }
-        backButton={
-            <Button size="small" onClick={handleBack} disabled={maxSteps === 0}>
-                {theme.direction === 'rtl' ? (
+            </Box>
+            <MobileStepper
+                variant="dots"
+                steps={maxSteps}
+                position="static"
+                activeStep={activeStep}
+                nextButton={
+                <Button
+                    size="small"
+                    onClick={handleNext}
+                    disabled={maxSteps === 0}
+                >
+                    Next
+                    {theme.direction === 'rtl' ? (
+                            <KeyboardArrowLeft />
+                    ) : (
                     <KeyboardArrowRight />
-                ) : (
-                    <KeyboardArrowLeft />
-                )}
-                Back
-            </Button>
-        }
-        />
-    </Box>
+                    )}
+                </Button>
+            }
+            backButton={
+                <Button size="small" onClick={handleBack} disabled={maxSteps === 0}>
+                    {theme.direction === 'rtl' ? (
+                        <KeyboardArrowRight />
+                    ) : (
+                        <KeyboardArrowLeft />
+                    )}
+                    Back
+                </Button>
+            }
+            />
+        </Box>
     </section>
 );
 }
