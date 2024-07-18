@@ -4,8 +4,8 @@ import Home from "./view/Home/Home.jsx";
 import NotFound from "./view/NotFound/NotFound.jsx";
 import PharmacyTurn from "./view/PharmacyTurn/PharmacyTurn.jsx";
 import Footer from "./components/Footer/Footer.jsx";
+import Login from "./view/Login/Login.jsx"
 import SearchResult from "./view/Search/SearchResult.jsx";
-import Login from "../src/view/Login/Login.jsx";
 import Extranet from "./view/Private/Extranet.jsx";
 import Config from "./view/Configurations/Config.jsx";
 import { useAuth } from './context/useAuth.jsx';
@@ -31,7 +31,7 @@ function App() {
             <Route path="/Farmacia-de-turno" element={<PharmacyTurn />} />
             <Route path="/buscar-medicamento/:name" element={<SearchResult />} />
             <Route path="/login" element={<Login />} /> 
-            <Route path="/farmacia-grecia-extranet/" element={user ? <Extranet /> : <Login />} />
+            <Route path="/farmacia-extranet" element={user ? <Extranet /> : <Login />} />
             <Route path="/config" element={user ? <Config /> : <Login />} />
             {/* <Route path="/category/:id/:name" element={<Category />} />
             <Route path="/resultados/:name" element={<SearchResult />} />

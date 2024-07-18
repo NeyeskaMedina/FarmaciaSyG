@@ -26,7 +26,7 @@ const Config = () => {
     };
     const handlePrevius = (e) => {
         e.preventDefault();
-        navigate("/farmacia-grecia-extranet/");
+        navigate("/farmacia-extranet");
     }
     
     return (
