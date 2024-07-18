@@ -39,7 +39,7 @@ const Login = () => {
             swal("¡Has iniciado sesión correctamente!", {
                 icon: "success",
             });
-            navigate("/farmacia-grecia-extranet/");
+            navigate("/farmacia-extranet");
         } catch (error) {
             console.error("Error al iniciar sesión:", error);
             swal(
