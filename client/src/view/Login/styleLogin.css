@@ -3,20 +3,25 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    height: auto;
 }
 .login_img{
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
+    margin-top: 20px;
 }
 .login_img img{
     width: 80%;
 }
+.login_grid {
+    height: 100%;
+}
 .login_enter{
     display: flex;
     flex-direction: column;
-    align-content: center;
+    align-items: center;
     justify-content: center;
     margin: 2% 0%;
 }
