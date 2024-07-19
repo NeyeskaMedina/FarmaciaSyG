@@ -54,8 +54,8 @@ return (
     <div className="login_page">
         <Container>
             <Box sx={{ flexGrow: 1 }} >
-                <Grid container spacing={2} columns={16}>
-                    <Grid item xs={8}  >
+                <Grid container spacing={2} columns={16} className="login_grid">
+                    <Grid item xs={16} md={8}  >
                         <div className="login_img">
                             <img
                                 src="https://firebasestorage.googleapis.com/v0/b/farmacias-syg.appspot.com/o/imagenes%2FGroup%201002.png?alt=media&token=6f465b19-a0c9-4324-8e6b-8d765a9ebb6e"
@@ -63,10 +63,10 @@ return (
                             />
                         </div>
                     </Grid>
-                    <Grid item xs={8}>
+                    <Grid item xs={16} md={8} >
                       <div className="login_enter">
                         <div className="login_title">
-                          <h1>Ingresa a tu cuenta</h1>
+                          <h1 style={{ width: '100%', textAlign: 'center' }}>Ingresa a tu cuenta</h1>
                         </div>  
                         <div className="login_border">
                           <form >
