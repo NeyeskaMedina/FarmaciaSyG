@@ -11,7 +11,6 @@ import Config from "./view/Configurations/Config.jsx";
 import { useAuth } from './context/useAuth.jsx';
 import { Box } from "@mui/material";
 // import Search from "./components/Navbar/Search.jsx";
-import { IoMdSearch } from "react-icons/io";
 
 
 function App() {
@@ -55,15 +54,6 @@ function App() {
 
           </Routes>
         </main>
-              <IoMdSearch 
-                  size={30}
-                  sx={{
-                      flexGrow: 1, 
-                      display: { xs: "flex", md: "none", xl: 'none' }, 
-                      position: 'fixed',
-                      marginBottom: '0'
-                  }}
-              />
         <footer style={{width: '-moz-available'}}>
                 <Footer />
         </footer>
