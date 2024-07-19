@@ -49,15 +49,15 @@ return (
     <section style={{width: '100vw'}}>
         <Box sx={{ maxWidth: '92%',
                         flexGrow: 1,
-                        margin: 'auto',
-                        textAlign: 'center', 
+                        textAlign: 'center',
                 }}>
                 
             <Box sx={{ height: 255, p: 2 }}>
                 <div className='carrusel_img'>
                 <img  src={steps[activeStep].description} alt="" 
                     style={{
-                        width: '98%'
+                        width: '90vw',
+                        height:  '45vh',
                     }} 
                 />
                 </div>
