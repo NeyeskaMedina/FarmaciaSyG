@@ -6,9 +6,18 @@ import { useState } from 'react';
 
 export default function Search() {
     const [searchValue, setSearchValue] = useState('');
+    const [isExpansed, setIsExpansed] = useState(false)
+
     const navigate = useNavigate();
 
+    const handleLeave = () =>{
+        setIsExpansed(false)
+    }
 
+    const handleClick = (e) =>{
+        e.preventDefault();
+        setIsExpansed(true)
+    }
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log("Valor ingresado:", searchValue);
@@ -21,12 +30,15 @@ export default function Search() {
     }
 
     return (
-        <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', width: '24%' }}>
+        <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'end' }}>
             <form  onSubmit={handleSubmit}>
                 <FormControl
                     sx={{
                         m: 1,
-                        width: '18rem',
+                        width: { 
+                            xs: !isExpansed ? '6rem' : '18rem',
+                            md: '18rem',
+                        },
                         borderRadius: '50px',
                         backgroundColor: 'var(--background-navba-color)',
                         boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
@@ -49,6 +61,7 @@ export default function Search() {
                             },
                         },
                     }}
+                    
                 >
                     <InputLabel sx={{
                         color: 'var(--font-placeholder-color)',
@@ -65,7 +78,9 @@ export default function Search() {
                         id="search-medicine"
                         type="text"
                         value={searchValue}
+                        onClick={handleClick}
                         onChange={handleChange}
+                        onMouseLeave={handleLeave}
                         endAdornment={
                             <InputAdornment position="end">
                                 <IconButton
