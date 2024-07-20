@@ -46,18 +46,26 @@ const Carrusel = () => {
     };
 
 return (
-    <section style={{width: '100vw'}}>
-        <Box sx={{ maxWidth: '92%',
+    <section style={{display: 'flex',width: '100vw', height: {xs: '100px', md: '255px'}}}>
+        <Box sx={{ maxWidth: '100%',
                         flexGrow: 1,
+                        height: '70%',
                         textAlign: 'center',
+                        backgroundImage: 'url("https://firebasestorage.googleapis.com/v0/b/farmacias-syg.appspot.com/o/imagenes%2FGroup%201137%20(2).png?alt=media&token=8a9d97a6-d944-47f9-865d-358f3af39d07")',
                 }}>
                 
-            <Box sx={{ height: 255, p: 2 }}>
+            <Box sx={{ 
+                    height: "80%",
+                    p: 2,
+                    }}>
                 <div className='carrusel_img'>
                 <img  src={steps[activeStep].description} alt="" 
                     style={{
                         width: '90vw',
-                        height:  '45vh',
+                        height: {
+                            xs: '25vh',
+                            md: '45vh'
+                        } 
                     }} 
                 />
                 </div>

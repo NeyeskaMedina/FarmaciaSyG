@@ -2,7 +2,7 @@
     /* width: 68rem !important; */
 
 }
-.carrusel_img img{
+/* .carrusel_img img{
     width: inherit;
     border-radius: 6px;
     border: 6px solid white;
@@ -24,7 +24,7 @@
         border-radius: 5px;
         background-image: url("https://firebasestorage.googleapis.com/v0/b/farmacias-syg.appspot.com/o/imagenes%2FGroup%201137%20(2).png?alt=media&token=8a9d97a6-d944-47f9-865d-358f3af39d07");
     }
-    
+     */
     @media (min-width: 1400px) {
         .carrusel_img{
             width: 84rem !important;
