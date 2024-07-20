@@ -9,8 +9,7 @@ import SearchResult from "./view/Search/SearchResult.jsx";
 import Extranet from "./view/Private/Extranet.jsx";
 import Config from "./view/Configurations/Config.jsx";
 import { useAuth } from './context/useAuth.jsx';
-import { Box } from "@mui/material";
-// import Search from "./components/Navbar/Search.jsx";
+import Search from './components/Navbar/Search.jsx';
 
 
 function App() {
@@ -57,6 +56,9 @@ function App() {
         <footer style={{width: '-moz-available'}}>
                 <Footer />
         </footer>
+        <div className="search-container">
+            <Search/>
+        </div>
       </div>
     );
 }

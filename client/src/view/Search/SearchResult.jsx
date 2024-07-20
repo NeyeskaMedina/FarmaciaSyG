@@ -40,7 +40,6 @@ const SearchResult = () => {
       return (
       <>
         <Box sx={{ display: 'flex', width: '100%', height: '68vh', justifyContent: 'center', alignItems: 'center' }}>
-          {/* <p style={{ fontSize: '20px' }}>Cargando...</p> */}
           <CircularProgressWithLabel value={100} />
         </Box>
       </>

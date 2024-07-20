@@ -59,3 +59,21 @@ html{
   padding: 0;
   box-sizing: border-box;
 }
+/* style.css */
+.search-container {
+  position: fixed;
+  bottom: 0;
+  width: 92vw;
+  justify-content: end;
+  height: 10vh;
+  display: flex;
+  padding: 10px;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.1); /* Opcional, para un efecto de sombra */
+  z-index: 1000;
+}
+
+@media (min-width: 900px) {
+  .search-container {
+    display: none; /* Ocultar el componente en pantallas más grandes */
+  }
+}
