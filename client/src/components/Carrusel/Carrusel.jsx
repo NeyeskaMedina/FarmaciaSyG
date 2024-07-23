@@ -47,7 +47,7 @@ const Carrusel = () => {
         justifyContent: 'center', 
         alignItems: 'center',
         height: { xs: '30vh', md: '45vh' }, 
-        width: 'cal(100vw-14px)',
+        width: '-moz-available',
         backgroundImage: 'url("https://firebasestorage.googleapis.com/v0/b/farmacias-syg.appspot.com/o/imagenes%2FGroup%201137%20(2).png?alt=media&token=8a9d97a6-d944-47f9-865d-358f3af39d07")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
@@ -78,7 +78,7 @@ const Carrusel = () => {
         />
       </Box>
       <MobileStepper
-        sx={{ width: '-moz-available', bottom: 0, marginTop: '3vh' }}
+        sx={{ width: '-moz-available', bottom: 0, margin: '3vh 0px 0px 0px', padding: '5px' }}
         variant="dots"
         steps={maxSteps}
         position="static"
