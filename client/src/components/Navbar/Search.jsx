@@ -10,11 +10,12 @@ export default function Search() {
 
     const navigate = useNavigate();
 
-    const handleLeave = () =>{
+    const handleLeave = (e) =>{
+        e.preventDefault();
         setIsExpansed(false)
     }
 
-    const handleClick = (e) =>{
+    const handleEnter = (e) =>{
         e.preventDefault();
         setIsExpansed(true)
     }
@@ -31,13 +32,17 @@ export default function Search() {
 
     return (
         <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'end' }}>
-            <form  onSubmit={handleSubmit}>
+            <form  onSubmit={handleSubmit} >
                 <FormControl
                     sx={{
                         m: 1,
                         width: { 
-                            xs: !isExpansed ? '6rem' : '18rem',
+                            xs: !isExpansed ? '2.5rem' : '18rem',
                             md: '18rem',
+                        },
+                        marginBottom: {
+                            xs: '25px', 
+                            md: '0px' 
                         },
                         borderRadius: '50px',
                         backgroundColor: 'var(--background-navba-color)',
@@ -78,9 +83,9 @@ export default function Search() {
                         id="search-medicine"
                         type="text"
                         value={searchValue}
-                        onClick={handleClick}
                         onChange={handleChange}
                         onMouseLeave={handleLeave}
+                        onMouseEnter={handleEnter}
                         endAdornment={
                             <InputAdornment position="end">
                                 <IconButton
@@ -90,6 +95,10 @@ export default function Search() {
                                         backgroundColor: 'var(--linea-border-color2)',
                                         borderTopLeftRadius: 0,
                                         borderBottomLeftRadius: 0,
+                                        position: { xs: 'absolute', md: 'relative' },
+                                        left: { xs: !isExpansed ? '0px' : 'auto' },
+                                        right: { xs: isExpansed ? '14px' : '0px', md: '0px'},
+
                                     }}
                                 >
                                     <SearchIcon />
@@ -97,7 +106,7 @@ export default function Search() {
                             </InputAdornment>
                         }
                         aria-describedby="search-medicine"
-                        label="Busca tu Medicamento"
+                        label='Busca tu medicamento'
                     />
                 </FormControl>
             </form>
