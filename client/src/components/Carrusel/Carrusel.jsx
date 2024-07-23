@@ -78,7 +78,7 @@ const Carrusel = () => {
         />
       </Box>
       <MobileStepper
-        sx={{ width: '100%', bottom: 0, marginTop: '3vh' }}
+        sx={{ width: '-moz-available', bottom: 0, marginTop: '3vh' }}
         variant="dots"
         steps={maxSteps}
         position="static"
